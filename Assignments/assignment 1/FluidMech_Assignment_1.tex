@@ -1,0 +1,181 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\usetikzlibrary{positioning, shapes.geometric, arrows.meta, arrows}
+\usepackage{enumitem}
+
+\usepackage{float}
+% To make subfirgures
+\usepackage{caption, subcaption}
+
+\usepackage{cancel}
+\usepackage{braket}
+
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm, graphicx}
+
+% More space in matrices. Example usage: \pmatrix{}[1.5] for 1.5 times spacing
+\makeatletter
+\renewcommand*\env@matrix[1][\arraystretch]{%
+  \edef\arraystretch{#1}%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{*\c@MaxMatrixCols c}}
+\makeatother
+
+
+\usepackage{cancel}
+
+\usepackage{empheq}
+\usepackage{fancybox}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{braket}
+\usepackage{siunitx}
+
+\usepackage{enumitem}
+\setlength{\parindent}{0pt}
+
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{colortbl}
+
+\usepackage{array, booktabs}
+\usepackage{dsfont}
+
+\usepackage{calligra}
+\usepackage{mathrsfs}
+
+\usepackage{empheq}
+\usepackage{fancybox}
+\usepackage{multicol}
+
+\usepackage[parfill]{parskip}
+\setlength{\parindent}{0pt}
+\usepackage{tcolorbox}
+\usepackage{tikz-cd}
+\usepackage{mathtools}
+
+\usepackage{array}
+\usepackage{dsfont}
+
+\usepackage{color}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+
+\title{Fluid Mechanics - Assignment 1}
+\author{Marcus Koschmieder Krogsgaard}
+
+\begin{document}
+\maketitle
+
+
+\section*{Problem 1: VELOCITY FIELD: STREAMLINES AND PATHLINES IN TWO-
+DIMENSIONAL FLOW}
+
+\subsection*{1.}
+\begin{itemize}
+	\item \textbf{Streamlines}:
+	
+	(Pg. 84) A streamline is the curve that is tangent to the fluid velocity throughout the flow field.
+	
+	Streamlines are curves that are tangent to the fluid velocity. In other words, the line element along a streamline at a point should be parallel to the fluid velocity at that point. If a group of streamlines forms an closed shape, such as a cylinder, it will be impossible for fluid particles to pass through it, since the velocity of a particle will become tangent to the surface as it approaches it.
+	
+	\item \textbf{Path lines}:
+	
+	(Pg. 84) A path line is the trajectory of a fluid particle of fixed identity.
+	A path line is the trajectory of a single particle moving in the fluid. While streamlines are tangent to the fluid velocity, path lines are essentially the integral of the fluid velocity, with the initial condition chosen to match whichever particle we want to follow.
+	
+	\item \textbf{Streak lines}:
+	
+	Sometimes multiple particles will pass through the same point in space as they flow through the fluid, though possibly at different points in time. Streak lines are what you get when you follow the trajectory of all those particles. It is somewhat similar to the concept of a path line, since we consider the path lines of all particles that will pass through a given point in space. The streak lines can be considered a family of the path lines of all of the particles that will ever pass through a point.
+	
+\end{itemize}
+
+\subsection*{2.}
+
+According to eq. (3.7), the requirement that streamlines be tangent to the fluid velocity can be expressed as:
+\begin{align*}
+	dx/v_x = dy/v_y = dz/v_z
+\end{align*}
+where $v_i$ is the $i$-component of the local fluid velocity. This can be used to find a differential equation which the functions defining the streamlines must obey. In our case, the local fluid velocity is given by the velocity field $\vec{V}$ so we get:
+\begin{align*}
+	\frac{dy}{dx} &= \frac{v_y}{v_x} \\
+	&= - \frac{y}{x}
+\end{align*}
+This is a separable differential equation. For $x \neq = 0$ we find:
+\begin{align*}
+	\frac{dx}{v_x} &= \frac{dy}{v_y} \\
+	\Leftrightarrow \frac{1}{x}dx &= - \frac{1}{y	}dy \\
+	\Leftrightarrow \ln(|x|) &= - \ln(|y|) + C \\
+	\Leftrightarrow |x| &= \frac{1}{|y|} e^C
+\end{align*}
+The solution is $y = \frac{C}{x}, x \neq 0$ where $C$ must be determined from the initial conditions. For $x=0$ we get $y=0$ which agrees with the other solution, so we can write the general solution for all values of $x$ as:
+\begin{align*}
+	y = \frac{C}{x}
+\end{align*}
+
+\subsection*{3.}
+For the streamline passing through $(x_0, y_0) = (2,8)$, we find $C = 16$. Hence, the streamline passing through this point is described by $y = \frac{16}{x}$. LAV PLOT HER
+
+\subsection*{4.}
+The velocity of a particle at $(x_0,y_0)$ is just the value of the velocity field at that point. Since $(x_0, y_0) = (2,8)$, we get:
+\begin{align*}
+	\vec{V}(2,8) &= (2A, - 8A) \\
+	&= \left( \frac{3}{5}, - \frac{12}{5} \right)
+\end{align*}
+
+\subsection*{5.}
+To solve this, we'll use eq (3.8) to find the path line of the particle that passes through $(x_0,y_0)$ at $t=0$. Since $d\mathbf{r}/dt = \vec{V}$, we find $\mathbf{r}(t)$ by integrating each component of the velocity field and applying the initial condition $\mathbf{r}(0) = (x_0, y_0)$:
+\begin{align*}
+	x &= \int_0^t v_x dt' \\
+	&= A x t + x_0
+\end{align*}
+We see that $x(t) = \frac{x_0}{1- A t}$. As for $y(t)$:
+\begin{align*}
+	y &= \int_0^t v_y dt' \\
+	&= - A y t + y_0
+\end{align*}
+It follows that $y(t) = \frac{y_0}{1 + A t}$. We arrive at the following path line for the particle passing through $(x_0, y_0)$ at $t=0$:
+\begin{align*}
+	\mathbf{r}(t) &= \left( \frac{x_0}{1 - A t}, \frac{y_0}{1 + A t} \right)
+\end{align*}
+At $t=6$, the position of the particle is:
+\begin{align*}
+	\mathbf{r}(6) &= \left( \frac{x_0}{1 - 6A}, \frac{y_0}{1 + 6A} \right) \\
+	&= \left( -\frac{5}{2}, \frac{20}{7}\right)
+\end{align*}
+
+\subsection*{6.}
+Now that we now the position of the particle at $t=6$, finding the velocity is trivial. We just plug the position into the velocity field:
+\begin{align*}
+	\vec{V}\left( -\frac{5}{2}, \frac{20}{7}\right) &= \left(\frac{3}{4}, \frac{6}{7}\right)
+\end{align*}
+
+\subsection*{7.}
+Starting from the path line $\mathbf{r}(t) = (x(t), y(t))$, we write:
+\begin{align*}
+	y = \frac{C}{x}
+\end{align*}
+If we are able to write the path line equation in this form and find that $C=16$ (as we found for the streamline in problem 1.3) we will have shown that the streamline passing through $(x_0,y_0)$ and the path line passing through the same point at $t=0$ are described by the same equation. Let us begin:
+\begin{align*}
+	y &= \frac{C}{x} \\
+	\Leftrightarrow \frac{y_0}{1 + A t} &= C \frac{1 - A t}{x_0} \\
+	\Leftrightarrow C &= x_0 y_0 \frac{1 - A t}{1 + A t}
+\end{align*}
+This must agree for all $t$. For $t=0$ in particular, we have:
+\begin{align*}
+	C &= x_0 y_0 = 2 \times 8 = 16
+\end{align*}
+So the streamline and path line are indeed described by the same equation.
+
+
+\end{document}
