@@ -146,8 +146,143 @@ Or, using the notation $(\mathbf{V} \cdot \nabla) \mathbf{V}$ for the convective
 \end{align}
 The first term represents movement due to convection (the steady part of the flow) and the time-derivative term represents the local acceleration due to unsteadiness in the flow. Eq. (\ref{eq:introduction_eulerian_flow}) is the equation used to compute the acceleration of fluid particles in the Eulerian description.
 
+
 \subsection{Kinematics}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{img/introduction/fluid_segment_motion.png}
+    \caption{Various types of motion of a 2D fluid segment.}
+    \label{fig:introduction_fluid_segment_motion}
+\end{figure}
+
+Fig. \ref{fig:introduction_fluid_segment_motion} illustrates the four types of motion that are possible for a 2D fluid segment. Any time-evolution of a fluid segment will be a combination of these four types of motion.
+
+\subsubsection{Translation}
+
+The translation of an individual fluid particle is connected with the velocity field via eq. (\ref{eq:introduction_eulerian_flow})
+\begin{align*}
+	\mathbf{a}_p = \frac{D \mathbf{V}}{D t} &= (\mathbf{V} \cdot \nabla) \mathbf{V} + \frac{\partial \mathbf{V}}{\partial t}
+\end{align*}
+Since this can be solved to find the translation of an individual particle, it may be used to describe how fluid segments are translated as well. We see that translatory motion depends only on the acceleration of particles in the flow.
+
+\subsubsection{Rotation}
+
+The rotation of a particle in a flow can be modelled with a vector $\mathbf{\omega} = (\omega_x, \omega_y, \omega_<)$ whose components are the angular velocities associated with rotation about the three coordinate axes. Fig. \ref{fig:introduction_fluid_rotation_and_deformation} a) and b) show how a square fluid segment undergoes some deformation and rotation during a time interval $\Delta t$. The deformation is described by the translation displacements $\Delta \eta$ and $\Delta \xi$ as well as the angular displacements $\Delta \alpha$ and $\Delta \beta$. Note that $\Delta \alpha$ is positive, while $\Delta \beta$ is negative, since we use the convention that counterclockwise rotation is the positive direction of rotation.
+ 
+Fig. \ref{fig:introduction_fluid_rotation_and_deformation} shows 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{img/introduction/introduction_fluid_rotation_and_deformation.png}
+    \caption{ }
+    \label{fig:introduction_fluid_rotation_and_deformation}
+\end{figure}
+
+The segment's rigid body rotation (the rotational motion) can be found by taking the average of the two angular displacements, see fig. \ref{fig:introduction_fluid_rotation_and_deformation} c). The minus sign in $\frac{\Delta \alpha - \Delta \beta}{2}$ is due to the fact that we are taking the average in the counterclockwise direction, and the counterclockwise rotation of $ob$ is $-\Delta \beta$.
+
+We will also need to find the translational displacements $\Delta \eta$ and $\Delta \xi$. To do so, we will consider the situation where all of the displacements and angles involved in the problem are small. Then we can Taylor expand the velocity field $\mathbf{V}$ to get
+\begin{align}
+	V_x(b) &= V_x(o) + \frac{\partial V_x}{\partial y} \Delta y
+\end{align}
+So the $x$-displacement of $b$ will be $\left(V_x(o) + \frac{\partial V_x}{\partial y} \Delta y\right) \Delta t$. To find $\Delta \xi$ we must subtract the displacement of the origin which is $V_x(o) \Delta t$. That leaves us with
+\begin{align}
+	\Delta \xi &= \frac{\partial V_x}{\partial y} \Delta y \Delta t
+\end{align}
+The same argument can be used to obtain
+\begin{align}
+	\Delta \eta &= \frac{\partial V_y}{\partial x} \Delta x \Delta t
+\end{align}
+In our small-displacement approximation, we can write the angular displacements as
+\begin{align}
+	\Delta \alpha &= \frac{\Delta \eta}{\Delta x} \\
+	\Delta \beta &= \frac{\Delta \xi}{\Delta y}
+\end{align}
+Leading to the following result:
+\begin{align}
+	\frac{1}{2} \frac{(\Delta \alpha - \Delta \beta)}{\Delta t}   = \frac{1}{2} \frac{\left(\frac{\Delta \eta}{\Delta x} - \frac{\Delta \xi}{\Delta y}\right)}{\Delta t} = \frac{1}{2} \frac{\left(\frac{\partial V_y}{\partial x} \Delta t - \frac{\partial V_x}{\partial y} \Delta t\right)}{\Delta t}
+\end{align}
+To find the angular velocity about the $z$-axis, we take the limit $\Delta t \rightarrow 0$
+\begin{align}
+	\omega_z &= \frac{1}{2} \left(\frac{\partial V_y}{\partial x} - \frac{\partial V_x}{\partial y}\right)
+\end{align}
+This is the $z$-component of the curl of the velocity field (multiplied by a factor of $1/2$). The same argument can be applied to fluid segments in the $yz$- and $xz$-planes, so we conclude that
+\begin{align}
+	\mathbf{\omega} &= \frac{1}{2} \nabla \times \mathbf{V} = \mathbf{\zeta}
+\end{align}
+Where we've introduced the vorticity $\mathbf{\zeta} = 2 \mathbf{\omega} = \nabla \times \mathbf{V}$ to get rid of the factor of $1/2$.
+
+\subsubsection{Angular Deformation}
+
+Fig. \ref{fig:introduction_fluid_segment_motion} d) illustrates how the angular deformation component is the sum of the individual angular displacements $\Delta \alpha + \Delta \beta$ (find out where the factor of $1/2$ comes from!)
+
+We can repeat the last steps of our previous calculation to see that the total angular deformation in the $xy$-plane $R_{xy}$ is given by	
+\begin{align}
+	R_{xy} &= \lim_{\Delta t \rightarrow 0} \frac{1}{2} \frac{(\Delta \alpha + \Delta \beta)}{\Delta t} \\
+	&= \frac{1}{2} \left(\frac{\partial V_y}{\partial x} + \frac{\partial V_x}{\partial y}\right)
+\end{align}
+And by the same reasoning
+\begin{align}
+	R_{yz} &= \frac{1}{2} \left(\frac{\partial V_z}{\partial y} + \frac{\partial V_y}{\partial z}\right) \\
+	R_{xz} &= \frac{1}{2} \left(\frac{\partial V_z}{\partial x} + \frac{\partial V_x}{\partial z}\right)
+\end{align}
+
+So angular deformation and rotation is described by the rotation tensor $R_{ij} = \frac{1}{2} \left(\frac{\partial V_i}{x_j} - \frac{\partial V_j}{x_i} \right)$
+
+\subsubsection{Linear Deformation}
+Linear deformation (deformation that preserves right angles) in the $x_i$-direction is only possible if $\frac{\partial V_i}{x_i} \neq 0$. This quantity represents the longitudinal strain rates in the $x_i$-direction. Unlike other types of deformation, linear deformation may lead to changes in volume given by the volume dilation rate
+\begin{align}
+	\text{volume dilation rate} &= \frac{\partial V_x}{\partial x} + \frac{\partial V_y}{\partial y} + \frac{\partial V_z}{\partial z} = \nabla \cdot \mathbf{V}
+\end{align}
+
+A flow is \textit{incompressible} if the volume dilation is zero $\nabla \cdot \mathbf{V} = 0$. 
+
+We see that linear deformation is described by the strain rate tensor $S_{ij} = \frac{1}{2} \left(\frac{\partial V_i}{x_j} + \frac{\partial V_j}{x_i} \right)$
+
+\subsubsection{Tensor Representation of Deformation}
+To model the deformation that fluid segments undergo, we need to consider the gradient of the velocity field (we have just seen that the derivatives of the velocity field are needed to describe the various types of fluid segment motion).
+
+The gradient of the velocity field is a tensor with the following entries
+\begin{align}
+	\nabla \mathbf{V} &= A_{ij} = \partial_i v_j
+\end{align}
+It is a known result from tensor calculus that \textit{any} tensor can be decomposed into a symmetric and an antisymmetric part. This is easily shown by writing the tensor $T_{ij}$ in a clever way and adding and subtracting the transpose $T_{ji}$
+\begin{align*}
+	T_{ij} &= \frac{1}{2} T_{ij} + \frac{1}{2} T_{ij} \\
+	&= \frac{1}{2} T_{ij} + \frac{1}{2} T_{ji} + \frac{1}{2} T_{ij} - \frac{1}{2} T_{ji} \\
+	&= \frac{1}{2} (T_{ij} + T_{ji}) + \frac{1}{2} (T_{ij} - T_{ji})
+\end{align*}
+It can be shown that the first term is symmetric and the second is antisymmetric. Applying this result to $A_{ij}$, we see that
+\begin{align}
+	A_{ij} &= \frac{1}{2} (\partial_i v_j + \partial_j v_i) + \frac{1}{2} (\partial_i v_j - \partial_j v_i)
+\end{align}
+Considering the components of the symmetric and antisymmetric parts leads to the revelation that the symmetric part is the angular rotation tensor and the antisymmetric part is the strain rate tensor (both encountered in the previous sections)
+\begin{align}
+	A_{ij} &= \frac{1}{2} E_{ij} + \frac{1}{2} S_{ij}
+\end{align}
 
 
+
+\section{From Newton's Second Law to the Navier-Stokes Equations}
+
+\subsection{Conservation of Mass (the Continuity Equation)}
+\textbf{Important distinction:} For the purposes of this section, a \textit{material volume} is the volume occupied by a specific collection of fluid particles, while a \textit{control volume} is any arbitrary volume whose contents may change over time. In other words, the \textit{material volume} changes as the fluid particles move, while the control volume can be chosen arbitrarily.
+
+Consider a (possible time-dependent) material volume $V(t)$ in a flowing fluid with the fluid density $\rho(\mathbf{x}, t)$. Then the statement of conservation of mass can be expressed as
+\begin{align}
+	\frac{d}{dt} \int_{V(t)} \rho(\mathbf{x}, t) dV = 0 \label{eq:N2_NS_volume_mass_conservation}
+\end{align}
+Now we apply Reynolds transport theorem which makes the following statement (add derivation of this to the mathematics section)
+\begin{align}
+	\frac{d}{dt} \int_{V(t)} \rho(\mathbf{x}, t) dV = \int_{V(t)} \frac{\partial \rho(\mathbf{x}, t)}{\partial t} d V + \int_{A(t)} \rho(\mathbf{x}, t) \mathbf{b} \cdot \mathbf{n} dA
+\end{align}
+Note that $A(t)$ is the surface of the material volume $V(t)$. Furthermore, $\mathbf{b}$ is the velocity of $A$ and $\mathbf{n}$ is the outward normal vector of $A$. Applying Reynolds transport theorem to the conservation of mass leads to
+\begin{align}
+	\int_{V(t)} \frac{\partial \rho(\mathbf{x}, t)}{\partial t} d V + \int_{A(t)} \rho(\mathbf{x}, t) \mathbf{b} \cdot \mathbf{n} dA = 0 \label{eq:N2_NS_reynolds_on_mass_conservation}
+\end{align}
+So far, we have been considering a \textit{material volume}. However, a statement of conservation of mass for an arbitrary \textit{control volume} is highly desirable.
+
+
+
+
+\section{Mathematical Interludes}
 
 \end{document}
