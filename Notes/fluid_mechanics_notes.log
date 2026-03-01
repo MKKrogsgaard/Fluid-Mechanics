@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.2.28)  28 FEB 2026 14:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.2.28)  1 MAR 2026 15:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1071,7 +1071,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
 {/home/focus/.miktex/texmfs/data/fonts/map/pdftex/pdftex.map}]
-<img/introduction/fluid_segment_motion.png, id=111, 945.5325pt x 338.01282pt>
+<img/introduction/fluid_segment_motion.png, id=143, 945.5325pt x 338.01282pt>
 File: img/introduction/fluid_segment_motion.png Graphic file (type png)
 <use img/introduction/fluid_segment_motion.png>
 Package pdftex.def Info: img/introduction/fluid_segment_motion.png  used on inp
@@ -1082,7 +1082,7 @@ ut line 153.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [2]
-<img/introduction/introduction_fluid_rotation_and_deformation.png, id=132, 814.
+<img/introduction/introduction_fluid_rotation_and_deformation.png, id=164, 814.
 54312pt x 217.5628pt>
 File: img/introduction/introduction_fluid_rotation_and_deformation.png Graphic 
 file (type png)
@@ -1130,29 +1130,65 @@ Overfull \hbox (30.0pt too wide) in paragraph at lines 363--363
  []
 
 [9] [10]
-<img/N2_NS/Lecture1B_ShearStressSurfaceAB.png, id=233, 790.955pt x 786.94pt>
+<img/N2_NS/Lecture1B_ShearStressSurfaceAB.png, id=265, 790.955pt x 786.94pt>
 File: img/N2_NS/Lecture1B_ShearStressSurfaceAB.png Graphic file (type png)
 <use img/N2_NS/Lecture1B_ShearStressSurfaceAB.png>
 Package pdftex.def Info: img/N2_NS/Lecture1B_ShearStressSurfaceAB.png  used on 
 input line 431.
 (pdftex.def)             Requested size: 226.48395pt x 225.33691pt.
- [11 <./img/N2_NS/Lecture1B_ShearStressSurfaceAB.png>] [12] [13]
-(fluid_mechanics_notes.aux)
+ [11 <./img/N2_NS/Lecture1B_ShearStressSurfaceAB.png>] [12]
+<img/boundary_cond/Lecture2A_InterfaceTwoMediaBoundaryConditions.png, id=300, 6
+85.56125pt x 305.14pt>
+File: img/boundary_cond/Lecture2A_InterfaceTwoMediaBoundaryConditions.png Graph
+ic file (type png)
+<use img/boundary_cond/Lecture2A_InterfaceTwoMediaBoundaryConditions.png>
+Package pdftex.def Info: img/boundary_cond/Lecture2A_InterfaceTwoMediaBoundaryC
+onditions.png  used on input line 509.
+(pdftex.def)             Requested size: 271.7835pt x 120.97362pt.
+ [13 <./img/boundary_cond/Lecture2A_InterfaceTwoMediaBoundaryConditions.png>]
+Overfull \hbox (0.61931pt too wide) in paragraph at lines 538--541
+\OT1/cmr/m/n/12 The sign of $\OML/cmm/m/it/12 ^^[$ \OT1/cmr/m/n/12 is phys-i-ca
+lly mean-ing-ful. Re-call that na-ture tends to min-i-mize the Helmholtz
+ []
+
+<img/boundary_cond/Lecture2A_CurvedSurfaceBC.png, id=317, 169.48274pt x 122.795
+04pt>
+File: img/boundary_cond/Lecture2A_CurvedSurfaceBC.png Graphic file (type png)
+<use img/boundary_cond/Lecture2A_CurvedSurfaceBC.png>
+Package pdftex.def Info: img/boundary_cond/Lecture2A_CurvedSurfaceBC.png  used 
+on input line 548.
+(pdftex.def)             Requested size: 181.18439pt x 131.2826pt.
+[14 <./img/boundary_cond/Lecture2A_CurvedSurfaceBC.png>] [15]
+File: img/boundary_cond/Lecture2A_InterfaceTwoMediaBoundaryConditions.png Graph
+ic file (type png)
+<use img/boundary_cond/Lecture2A_InterfaceTwoMediaBoundaryConditions.png>
+Package pdftex.def Info: img/boundary_cond/Lecture2A_InterfaceTwoMediaBoundaryC
+onditions.png  used on input line 632.
+(pdftex.def)             Requested size: 271.7835pt x 120.97362pt.
+ [16] [17]
+[18] [19] (fluid_mechanics_notes.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-Package rerunfilecheck Info: File `fluid_mechanics_notes.out' has not changed.
-(rerunfilecheck)             Checksum: 9A20E8E4E1B0D93A5B68F059E9935B46;4792.
+
+
+Package rerunfilecheck Warning: File `fluid_mechanics_notes.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `fluid_mechanics_notes.out':
+(rerunfilecheck)             Before: 0B739AB3B91BBA8214606042B9159CFA;6796
+(rerunfilecheck)             After:  F0C4AB7D2ECF4EC86581F6151041EEDD;7026.
  ) 
 Here is how much of TeX's memory you used:
- 32374 strings out of 467868
- 686580 string characters out of 5423210
+ 32466 strings out of 467868
+ 688740 string characters out of 5423210
  1060968 words of memory out of 5000000
- 60665 multiletter control sequences out of 15000+600000
- 643074 words of font info for 98 fonts, out of 8000000 for 9000
+ 60704 multiletter control sequences out of 15000+600000
+ 644799 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,10n,107p,812b,1040s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,14n,107p,812b,1048s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/focus/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200
 .pk></home/focus/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.p
 fb></home/focus/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pf
@@ -1161,14 +1197,15 @@ b></home/focus/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 /home/focus/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></h
 ome/focus/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></hom
 e/focus/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb></home/
-focus/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/foc
-us/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/focu
-s/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb></home/focus/
-.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home/focus/.m
-iktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on fluid_mechanics_notes.pdf (13 pages, 470719 bytes).
+focus/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/foc
+us/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/focus/
+.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/focus/.
+miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb></home/focus/.mi
+ktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home/focus/.mikt
+ex/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on fluid_mechanics_notes.pdf (19 pages, 600633 bytes).
 PDF statistics:
- 354 PDF objects out of 1000 (max. 8388607)
- 117 named destinations out of 1000 (max. 500000)
- 196 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 474 PDF objects out of 1000 (max. 8388607)
+ 165 named destinations out of 1000 (max. 500000)
+ 270 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -402,7 +402,7 @@ If the fluid begins to undergo motion, it will no longer be at rest and $T_{ij}$
 \begin{align}
 	T_{ij} = - p \delta_{ij} + \tau_{ij}
 \end{align}
-This reduces to (\ref{eq:N2_NS_stress_tensor_at_rest}) when the fluid is no longer in motion. The contribution $\tau_{ij}$ is called the \textit{deviatoric stress tensor}. Galilean invariance requires $\tau_{ij}$ to be independent of the absolute fluid velocity, which means that it can only depend on the velocity gradient $\nabla \mathbf{u}$. Furthermore, the deviatoric stress tensor can only depend on the symmetric parts of $\nabla \mathbf{u}$ since (by definition!) stresses only develop exist when fluid elements change shape. Hence, $\tau_{ij}$ can only depend on the strain rate tensor $S_{ij}$. We want $\tau_{ij}$ to depend linearly on $S_{ij}$ with the condition $S_{ij} = 0 \implies \tau_{ij} = 0$, which is achieved by
+This reduces to (\ref{eq:N2_NS_stress_tensor_at_rest}) when the fluid is no longer in motion. The contribution $\tau_{ij}$ is called the \textit{deviatoric/viscous stress tensor}. Galilean invariance requires $\tau_{ij}$ to be independent of the absolute fluid velocity, which means that it can only depend on the velocity gradient $\nabla \mathbf{u}$. Furthermore, the deviatoric stress tensor can only depend on the symmetric parts of $\nabla \mathbf{u}$ since (by definition!) stresses only develop exist when fluid elements change shape. Hence, $\tau_{ij}$ can only depend on the strain rate tensor $S_{ij}$. We want $\tau_{ij}$ to depend linearly on $S_{ij}$ with the condition $S_{ij} = 0 \implies \tau_{ij} = 0$, which is achieved by
 \begin{align}
 \tau_{ij} = K_{ijmn} S_{mn}
 \end{align}
@@ -419,7 +419,7 @@ We can go even further: Since $T_{ij}$ is symmetric, $\tau_{ij}$ must be symmetr
 
 This leaves us with a much more tractable expression for the deviatoric stress tensor
 \begin{align}
-	\tau_{ij} = 2 \mu S_{ij} + \lambda S_{mm} \delta_{ij}
+	\tau_{ij} = 2 \mu S_{ij} + \lambda S_{mm} \delta_{ij} \label{eq:N2_NS_deviatoric_stress_tensor}
 \end{align}
 Hence the stress tensor becomes
 \begin{align}
@@ -432,6 +432,7 @@ Hence the stress tensor becomes
     \caption{This illustration shows how the shear stress $\tau$ in a fluid is approximately proportional to the velocity gradient.}
     \label{fig:N2_NS_shear_stress_proportionality}
 \end{figure}
+
 Fig. \ref{fig:N2_NS_shear_stress_proportionality} shows how the magnitude of the shear stress $\tau$ in a fluid depends on the velocity gradient. It has been shown experimentally that $\tau$ is approximately proportional to the velocity gradient, and that the proportionality factor is the \textit{dynamic viscosity} $\mu$
 \begin{align}
 	\tau = \mu \nabla \mathbf{u}
@@ -495,6 +496,179 @@ For inviscid flows, this term drops out. The resulting Navier-Stokes equation is
 \begin{align}
 	\rho \frac{D \mathbf{u}}{D t} &= \rho \mathbf{g} - \nabla p
 \end{align}
+
+
+\newpage
+\section{Boundary Conditions}
+The following sections include some examples of boundary conditions that can be used to solve the Navier-Stokes equation in various contexts.
+
+\subsection{Conservation of Mass Boundary Condition}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{img/boundary_cond/Lecture2A_InterfaceTwoMediaBoundaryConditions.png}
+    \caption{A rectangular control volume at the interface between two immiscible fluids (or a fluid and a solid). The control volume is moving with velocity $\mathbf{u}_s$ and the two tangent vectors to the interface surface are $\mathbf{t}'$ and $\mathbf{t}''$. $\mathbf{+n}$ and $\mathbf{-n}$ are the normal vectors pointing into medium 2 and medium 1 respectively. $\mathbf{u}_1$ and $\mathbf{u}_2$ are the velocities of the material surfaces in the two media.}
+    \label{fig:boundary_cond_mass_conservation}
+\end{figure}
+
+Consider a control volume at the interace between two immiscible fluids as shown in fig. \ref{fig:boundary_cond_mass_conservation}. We can apply eq. (\ref{eq:N2_NS_control_volume_mass_conservation}) for the conservation of mass in an arbitrary control volume to get
+\begin{align}
+	\dot{m}_s = \rho_1 (\mathbf{u}_1 - \mathbf{u}_s) \cdot \mathbf{n} = \rho_2 (\mathbf{u}_2 - \mathbf{u}_s) \cdot \mathbf{n}
+\end{align}
+Note that the sign convention chosen for $\dot{m}_s$ dictates whether $\mathbf{+n}$ or $\mathbf{-n}$ should be used for the normal vector. Some common cases are:
+\begin{enumerate}
+	\item If (1) is immiscible with (2) there is no mass flowing across the boundary, hence $\dot{m}_s = 0$ and we get
+	$\mathbf{u}_1 \cdot \mathbf{n}  = \mathbf{u}_2 \cdot \mathbf{n}$.
+	\item If (1) is a solid that is not dissolving, ablating, sublimating or otherwise exchanging material at the interface, then $\dot{m}_s = 0$ and $\mathbf{u}_1 = \mathbf{u}_s$ so we get $\mathbf{u}_2 \cdot \mathbf{n} = \mathbf{u}_s \cdot \mathbf{n}$. 
+	\item If the solid is also stationary, we get $\mathbf{u}_2 \cdot \mathbf{n} = 0$
+\end{enumerate}
+
+\subsection{Constant Surface Tension Boundary Condition}
+The boundary condition for surface tension can be derived from thermodynamic considerations. First recall that the Helmholtz free energy is defined as
+\begin{align}
+	F = U - T S
+\end{align}
+Where $U$ is the internal energy of the system, $T$ is the thermodynamical temperature and $S$ is the entropy. To find the Helmholtz free energy per unit mass, we replace $U$ and $S$ by their per unit mass equivalents
+\begin{align}
+	f = e - T s
+\end{align}
+Now consider an interface with area $A$ that separates two fluids (1) and (2), with a surface tension coefficient $\sigma$. The surface tension coefficient corresponds to the free Helmholtz energy per unit area stored in the interface. Then the total free Helmholtz energy of the system is
+\begin{align}
+	F = \rho_1 V_1 f_1 + \rho_2 V_2 f_2 + \sigma A
+\end{align}
+The sign of $\sigma$ is physically meaningful. Recall that nature tends to minimize the Helmholtz free energy.
+\begin{itemize}
+	\item If $\sigma > 0$, the two media are immiscible and $F$ will be at a local minimum when $A$ is small, so the interface surface area will tend to decrease over time.
+	\item If $\sigma < 0$, the two media are miscible and the minimum of $F$ occurs when $A$ is large, so the interface surface area will tend to increase until the fluids are completely mixed and the spacing between the folds of the interface is on the order of the molecular distances in the mixture.
+\end{itemize}
+
+Locally, the part of the interface surface that is bounded by some curve $C$ can be seen as a half-spheroid with two principal radii of curvature $R_1$ and $R_2$, see fig. \ref{fig:boundary_cond_half_spheroid}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\textwidth]{img/boundary_cond/Lecture2A_CurvedSurfaceBC.png}
+    \caption{A local model of the interface surface.}
+    \label{fig:boundary_cond_half_spheroid}
+\end{figure}
+
+We are interested in the equilibrium shape in the case where $\sigma > 0$. In this case, the shape will be dictated by the pressure difference $\Delta p$ between the lower and upper region in the figure, and the shape will be described by some function $\eta$ of the following form
+\begin{align}
+	\eta(x, y, z) = z - h(x, y) = 0
+\end{align}
+Now choose the coordinate system such that $h(\mathbf{0}) = \partial_i h (\mathbf{0}) = 0$ and such that the $x$- and $y$-directions are the direction along which the principal axes curvature lie along the coordinate axes (meaning $R_1$ and $R_2$ are found in the $xz$- and $yz$-planes). In that case, the shape of the interface is given by
+\begin{align}
+	\eta(x, y, z) = z \left( \frac{x^2}{2R_1} \right) - \left( \frac{y^2}{2R_2} \right) = 0
+\end{align}
+
+\subsubsection{Balance of Forces Calculation}
+If we want to understand how $\Delta p$ relates to the curvature $R_1$ and $R_2$ when the pressure forces are balanced, we will need to perform some detailed calculations. We will consider the limit where the interface area enclosed by $C$ approaches 0.
+
+First, we need to determine the net pressure force $\mathbf{F}_p$ on the interface surface $A$. The pressure force can be computed via the following surface integral
+\begin{align}
+	\mathbf{F}_p = - \int_A \Delta p \mathbf{n} dA
+\end{align}
+The minus sign is because we have chosen $\mathbf{n}$ to be the outward normal, and we want a higher pressure above the interface ($\Delta p > 0$) to lead to a downwards pressure force. See fig. \ref{fig:boundary_cond_half_spheroid}. 
+
+Finding $\mathbf{n}$ is simple
+\begin{align}
+	\mathbf{n} &= \frac{\nabla \eta}{|\nabla \eta|} = \frac{(-x/R_1, -y/R_2, 1)}{\sqrt{(x/R_1)^2 + (y/R_2)^2 + 1}}
+\end{align}
+The area element is
+\begin{align}
+	dA = \sqrt{1 + (\partial_x \eta)^2 + (\partial_y \eta)^2} dx dy = \sqrt{1 + (x/R_1)^2 + (y/R_2)^2} dx dy
+\end{align}
+We are now ready to perform the integral. In equilibrium, $\Delta p$ is constant and can be taken outside of the integral
+\begin{align}
+	\mathbf{F}_p = - \Delta p \int_{-\sqrt{2R_1 \xi}}^{+\sqrt{2R_1 \xi}} \left[ \int_{-\sqrt{2 R_2 \xi - x^2 R_2/R_1}}^{+\sqrt{2 R_2 \xi - x^2 R_2/R_1}} (-x/R_1, -y/R_2, 1) dy \right] dx
+\end{align}
+The limits of integration arise from the parametrization of the half-spheroid. The $z$-component can be evaluated relatively easily
+\begin{align}
+	(\mathbf{F}_p)_z = - \pi \Delta p \sqrt{2 R_1 \xi}\sqrt{2 R_2 \xi}
+\end{align}
+The integrals for the other components are odd integrals with symmetrical limits, so they are zero. 
+
+The surface tension force $\mathbf{F}_{st}$ acting on the curve $C$ can be found with the line integral
+\begin{align}
+	\mathbf{F}_{st} &= \sigma \oint_C \mathbf{t} \times \mathbf{n} ds
+\end{align}
+The tangent vector $\mathbf{t}$ to $C$ is
+\begin{align}
+	\mathbf{t} = - \frac{(1, dy/dx, 0)}{\sqrt{1 + (dy/dx)^2}}
+\end{align}
+And the line element is
+\begin{align}
+	ds = \sqrt{1 + (dy/dx)^2} dx
+\end{align}
+By performing the cross product and inserting the expression for $ds$, it is possible to show that
+\begin{align}
+	\mathbf{t} \times \mathbf{n} ds &= \frac{R_2/y)}{sqrt{1 + (dy/dx)^2}} \left(\frac{x}{R_1}, \frac{y}{R_2}, \frac{x^2}{R_1^2} + \frac{y^2}{R_2^2}\right) dx \\
+	&\approx \frac{R_2}{y} \left(\frac{x}{R_1}, \frac{y}{R_2}, \frac{x^2}{R_1^2} + \frac{y^2}{R_2^2}\right) dx
+\end{align}
+The approximation holds for $x/R_1, y/R_2 \ll 1$. We can eliminate $y$ using the equation for the boundary curve
+\begin{align}
+	\xi = (x^2/2R_1) - (y^2/2R_2), \quad \text{($\xi = \text{const}$)}
+\end{align}
+Doing so leads to the following integral for the $z$-component (the $x$- and $y$-components are both zero due to the symmetry of the integration path)
+\begin{align}
+	(\mathbf{F}_{st})_z = 4 \sigma \int_0^{\sqrt{2R-1\xi}} \frac{R-2}{\sqrt{2R_2\xi - (R_2/R_1)x^2}} \left[2 \xi + \frac{x^2}{R_1} \left(\frac{1}{R_1} - \frac{1}{R_2} \right) \right] dx
+\end{align}
+The factor of $4$ is because the integral with these limits only covers a quarter of the full integration path shown in fig. \ref{fig:boundary_cond_half_spheroid}. Performing this integral gives
+\begin{align}
+	(\mathbf{F}_{st})_z = \pi \sigma \sqrt{2 R_1 \xi} \sqrt{2 R_2 \xi} \left(\frac{1}{R_1} + \frac{1}{R_2} \right)
+\end{align}
+
+We are almost done now. Pressure equilibrium requires the net pressure force and net surface tension force to cancel
+\begin{align}
+	\mathbf{F}_p + \mathbf{F}_{st} = 0
+\end{align}
+Which implies that
+\begin{align}
+	\Delta p = \sigma \left(\frac{1}{R_1} + \frac{1}{R_2} \right) \label{eq:boundary_cond_surface_tension_pressure_gradient}
+\end{align}
+
+\subsection{Conservation of Momentum Boundary Condition}
+Recall fig. \ref{fig:boundary_cond_mass_conservation}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{img/boundary_cond/Lecture2A_InterfaceTwoMediaBoundaryConditions.png}
+\end{figure}
+
+ If we write down the conservation of momentum along the normal direction $\mathbf{n}$ and use eq. (\ref{eq:boundary_cond_surface_tension_pressure_gradient}), we get
+\begin{align}
+	\dot{m}_s (\mathbf{u}_2 - \mathbf{u}_1) \cdot \mathbf{n} = - \Delta p + ((n_i \tau_{ij})_2 - (n_i \tau_{ij})_1) + \sigma \left(\frac{1}{R'} + \frac{1}{R''} \right) \label{eq:boundary_cond_conservation_of_momentum}
+\end{align}
+Where $\tau_{ij}$ is the viscous stress tensor (\ref{eq:N2_NS_deviatoric_stress_tensor}) and $R'$ and $R''$ are the principal radii of curvature that lie along the principal directions of curvature $\mathbf{t}'$ and $\mathbf{t}''$. When $\dot{m}_s = 0$ and the fluid is inviscid, or when both fluids are stationary, this reduces to the pressure differnece (\ref{eq:boundary_cond_surface_tension_pressure_gradient}).
+
+\subsubsection{The No-Slip Condition}
+It is not possible to ascertain the requirements on the tangential components of the fluid velocities from the equations of motion. However, the following condition has been experimentally verified and is accepted for most ordinary fluids
+\begin{align}
+	\mathbf{u}_1 \cdot \mathbf{t}' = \mathbf{u}_2 \cdot \mathbf{t}', \quad \mathbf{u}_1 \cdot \mathbf{t}'' = \mathbf{u}_2 \cdot \mathbf{t}'' \label{eq:boundary_cond_no-slip}
+\end{align}
+This is called the \textit{no-slip condition} and it states that the tangential velocity components must match at the interface. For the common case of a viscous fluid (2) moving with respect to an impermeable solid (1), eqs. (\ref{eq:boundary_cond_conservation_of_momentum}) and (\ref{eq:boundary_cond_no-slip}) reduce to
+\begin{align}
+	\mathbf{u}_2 = \mathbf{u}_1
+\end{align}
+At the interface.
+
+\subsubsection{Control Volume Boundary Conditions}
+For the control volume in fig. \ref{fig:boundary_cond_mass_conservation}, the following boundary conditions apply
+\begin{align}
+	((n_i \tau_{ij})_2 - (n_i \tau_{ij})_1) t_j' + (\partial_j \sigma) t_j' = ((n_i \tau_{ij})_2 - (n_i \tau_{ij})_1) t_j'' + (\partial_j \sigma) t_j'' = 0
+\end{align}
+
+\subsection{Conservation of Energy Boundary Conditions}
+The conservation of energy boundary condition can be found by considering the internal and kinetic energy of the fluids, the work done by body and surface forces, as well as the heat flux across the interface. By accounting for these factors, it is possible to arrive at
+\begin{align}
+	\dot{m}_s \left[ \left( h + \frac{1}{2}|\mathbf{u}|^2 \right)_2 - \left( h + \frac{1}{2}|\mathbf{u}|^2 \right)_1 \right] = -\kappa \left[ (\nabla T)_2 - (\nabla T)_1 \right] \cdot \mathbf{n}
+\end{align}
+Where $h$ is the heat transfer coefficient and $\kappa$ is the thermal conductivity across the interface. The energy equivalent of the no-slip condition is
+\begin{align}
+	T_1 = T_2
+\end{align}
+Which forbids temperature jumps at the boundary.
+
+
+\newpage
+\section{Gravity Waves (no, not the kind you're thinking of)}
 
 
 \newpage
