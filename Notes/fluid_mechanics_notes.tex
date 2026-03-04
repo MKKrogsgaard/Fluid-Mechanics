@@ -497,6 +497,10 @@ For inviscid flows, this term drops out. The resulting Navier-Stokes equation is
 	\rho \frac{D \mathbf{u}}{D t} &= \rho \mathbf{g} - \nabla p
 \end{align}
 
+\newpage
+\section{Special Equations derived from the Navier-Stokes Equation}
+\subsection{The Bernoulli Equations}
+
 
 \newpage
 \section{Boundary Conditions}
@@ -668,7 +672,110 @@ Which forbids temperature jumps at the boundary.
 
 
 \newpage
-\section{Gravity Waves (no, not the kind you're thinking of)}
+\section{Gravity Wave Example}
+In this section, we will discuss \textit{gravity waves}, which are waves where gravity is the restoring force. We will assume that the wave frequency is much higher than the Coriolis frequency, such that we can neglect the Coriolis effect. We will also assume that the wave amplitudes are so small that all equations of motion and boundary conditions are linear.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\textwidth]{img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves.jpg}
+    \caption{An illustration of the linear liquid-surface gravity-waves. The $x$-axis has been chosen in the direction of propagation of the wave. $\eta$ measures the vertical deviation of the fluid surface from its equilibrium height $z=0$ and $H$ is the depth of the basin.}
+    \label{fig:gravity_waves_eta_illustration}
+\end{figure}
+We will discuss waves of the kind shown in fig. \ref{fig:gravity_waves_eta_illustration}. Our Ansatz will be that the waves are simple sine/cosine waves
+\begin{align}
+	\eta(x, t) = a \cos(kx - \omega t)
+\end{align}
+Remember that we are assuming $a/\lambda \ll 1$ and $a/H \ll 1$. The Ansatz is justified by the fact that long, low-amplitude surface gravity waves have often been observed to be sinusoidal.
+
+Because the flow is irrotational, it is possible to define a velocity potential $\phi$ such that $\mathbf{u} = -\nabla \phi$. Assuming the flow is incompressible (which is a good assumption for water) means that $\nabla \cdot \mathbf{u} = 0$, which implies
+\begin{align}
+	\Aboxed{\nabla^2 \phi = 0} \label{eq:gravity_wave_b0}
+\end{align}
+Now let's write down some boundary conditions. The first condition is that the fluid velocity at the bottom of the basin cannot be normal to the boundary
+\begin{align}
+	\Aboxed{w = \partial_z \phi = 0, \quad \text{at $z = -H$}} \label{eq:gravity_wave_b1}
+\end{align}
+The second condition is that fluid particles at the surface should move with the surface, which is expressed by stating that the normal component of the fluid velocity at the surface should be the same as the normal component of the surface velocity
+\begin{align}
+	(\mathbf{u} \cdot \mathbf{n})_{z=\eta} = \mathbf{u}_s \cdot \mathbf{n}
+\end{align}
+Let's try to write this in terms of the velocity potential. The equation describing the surface is $f(x,y,z) = z - \eta(x,t) = 0$, which tells us that the surface normal is
+\begin{align}
+	\mathbf{n} = \frac{\nabla f}{|\nabla f|} = \frac{\left( -\partial_x \eta, 0, 1 \right)}{\sqrt{(\partial_x \eta)^2 + 1}}
+\end{align}
+The surface velocity is strictly vertical $\mathbf{u}_s = \partial_t \eta \mathbf{e}_z$. Hence
+\begin{align*}
+	(\mathbf{u} \cdot \mathbf{n})_{z=\eta} &= \mathbf{u}_s \cdot \mathbf{n} \\
+	\Leftrightarrow (\mathbf{u} \cdot \nabla f)_{z=\eta} &= \mathbf{u}_s \cdot \nabla f \\
+	\Leftrightarrow \partial_z \phi \big|_{z = \eta} &= \partial_t \eta + (\partial_x \eta) (\partial_x \phi) \big|_{z=\eta}
+\end{align*}
+The slope of the wave is small because of the small amplitude assumption, which means that the term $(\partial_x \eta) (\partial_x \phi) \big|_{z=\eta}$ can be neglected. For consistency, the LHS must be Taylor expanded to first order as well, which gives
+\begin{align}
+	\Aboxed{\partial_z \phi \big|_{z = 0} = \partial_t \eta} \label{eq:gravity_wave_b2}
+\end{align}
+This is the second boundary condition in terms of $\phi$. It is valid if $a/\lambda \ll 1$.
+
+A third boundary condition arises from one of the Bernoulli equations (SPECIFY)
+\begin{align}
+	\partial_t \phi + \frac{1}{2}|\nabla \phi|^2 + g z + \frac{p}{\rho} = \text{const.}
+\end{align}
+We can drop the non-linear term because of our approximations
+\begin{align}
+	\partial_t \phi + g z + \frac{p}{\rho} \approx 0 \label{eq:gravity_waves_bernoulli_linearized}
+\end{align}
+The Bernoulli constant in this equation should be measured on the surface of the liquid, but far from the wave. To find the third boundary condition, we note that the pressure just below the surface should be the same as the ambient pressure, i.e. the Gauge pressure should be zero
+\begin{align}
+	p \big|_{z=0} = 0
+\end{align}
+Evaluating the Bernoulli equation (\ref{eq:gravity_waves_bernoulli_linearized}) at $z=\eta$ and Taylor expanding to first order produces the following result
+\begin{align}
+	\left( \partial_t \phi + g z + \frac{p}{\rho} \right) \big|_{z=\eta} \approx \partial_t \phi \big|_{z=0} + g \eta  \approx 0
+\end{align}
+Which can be written as
+\begin{align}
+	\Aboxed{\phi \big|_{z=0} = - g \eta} \label{eq:gravity_wave_b3}
+\end{align}
+Time to solve the system to find $\phi$. Since $\eta$ is a cosine function of $kx - \omega t$, the boundary conditions require $\phi$ to be a sine function of $kx - \omega t$
+\begin{align}
+	\phi (\mathbf{x}, t) = f(z) \sin(kx - \omega(k) t)
+\end{align}
+Substitute this into the Laplace eq. (\ref{eq:gravity_wave_b0})
+\begin{align}
+	\partial^2_z f - k^2 f = 0
+\end{align}
+This is a second-order, linear, homogeneous ODE for $f$ with the general solution
+\begin{align}
+	f(z) = C_+e^{kz} + C_- e^{-kz}
+\end{align}
+Substitute this back into the expression for $\phi$ to get
+\begin{align}
+	(C_+e^{kz} + C_- e^{-kz})\sin(kz - \omega (k) t)
+\end{align}
+One of the constants can be eliminated with (\ref{eq:gravity_wave_b1})
+\begin{align}
+	k(C_+e^{-kH} - C_- e^{kH})\sin(kz - \omega (k) t) = 0 \implies C_- = C_+ e^{-2kH}
+\end{align}
+Now use (\ref{eq:gravity_wave_b3}) to get
+\begin{align*}
+	k(C_+ - C_-)\sin(kz - \omega t) &= \omega a \sin(kz - \omega t) \implies k(C_+ - C_-) = \omega a \\
+	\Leftrightarrow k C_+ (1 - e^{-2kH}) &= \omega a \\
+	\implies C_+ &= \frac{\omega a}{k (1 - e^{-2kH})}, \quad C_- = \frac{\omega a e^{-2kH}}{k (1 - e^{-2kH})}
+\end{align*}
+We are done now. Plugging this back into $\phi$ and rewriting the result at bit gives
+\begin{align}
+	\phi = \frac{\omega a}{k} \frac{\cosh(k(z + H)}{\sinh(kH)} \sin(k x - \omega t)
+\end{align}
+Which in turn gives the velocity field
+\begin{align}
+	u = \omega a \frac{\cosh(k(z + H)}{\sinh(kH)} \cos(k x - \omega t), \quad \omega a \frac{\sinh(k(z + H)}{\sinh(kH)} \sin(k x - \omega t)
+\end{align}
+We can also find the dispersion relation. Using (\ref{eq:gravity_wave_b3}) gives
+\begin{align}
+	- \frac{\omega^2}{k} \frac{\cosh(kH)}{\sinh(kH)} 	\cos(kx - \omega t) &\approx - g \eta = - g a \cos(k x - \omega t) \\
+	\implies \omega = \sqrt{g k \tanh(kH)}
+\end{align}
+
+
+
 
 
 \newpage
