@@ -775,8 +775,40 @@ We can also find the dispersion relation. Using (\ref{eq:gravity_wave_b3}) gives
 \end{align}
 
 
+\newpage
+\section{Dynamic Similarity}
+\subsection{Dimensional Analysis and Dimensionless Forms}
+The general principle that nature should be independent of our choice of units tells us that all laws of nature and physical relations can be written in a dimensionless form. These dimensionless forms are unitless equations governed by some dimensionless parameters specific to the problem at hand. Dimensional analysis is the tool we use to find these dimensionless parameters when we can't deduce them directly from the equations governing our system. It is the art of deriving physical relationships just by looking at units.
 
+Before we dive into an algorithm for dimensional analysis, we need to introduce \textit{the Buckingham theorem}, which makes the following statement:
 
+\textit{Let $q_1, q_2, \dots, q_n$ be variables and parameters involved in a particular physical problem with $r$ degrees of freedom. If these variables are related by a relationship of the form $f(q_1, q_2, \dots, q_n) = 0$, then the $n$ variables can always be used to construct $n-r$ dimensionless parameter groups $\Pi_1, \Pi_2, \dots, \Pi_{n - r}$, such that the relationship $f(q_1, q_2, \dots, q_n) = 0$ can be rewritten as a dimensionless relationship}
+\begin{align}
+	\phi(\Pi_1, \Pi_2, \dots \Pi_{n - r}) = 0, \quad \text{or} \quad \Pi_1 = \varphi(\Pi_2, \Pi_3, \dots, \Pi_{n-r}) \label{eq:dimensional_analysis_buckingham_theorem}
+\end{align}
+
+We are now ready to proceed with \textit{Rayleigh's algorithm} for constructing the dimensionless relationship.
+\begin{enumerate}
+	\item Select the variables/parameters of interest $q_1, q_2, \dots, q_n$. Assume they are related via some relationship $f(q_1, q_2, \dots, q_n) = 0$.
+	\item Construct the dimensional matrix. Each row corresponds to a dimension in your unit system, e.g. $[M]$ or $[L]$. Each column corresponds to one of the $q_n$.
+	\item Determine the rank $r$ of the dimensional matrix. This is the number of degrees of freedom in the system.
+	\item Determine the number of dimensionless groups, $n-r$.
+	\item Construct the dimensionless groups. This can be done by exponent algebra. First select $r$ parameters $q_1', q_2', \dots, q_r'$ that will be used to construct all of the dimensionless groups. Then the i-th dimensionless group (corresponding to the i-th unused parameter that was not selected as one of the $r$ parameters) can be written as a product of $q_i$ and $q'$-parameters raised to unknown powers $a, b, c, ...$
+	\begin{align*}
+		\Pi_i = q_i q_1'^a q_2'^b q_3'^c ...
+	\end{align*}
+	Use dimensional analysis to ensure that the $\Pi_i$-group is dimensionless by choosing $a, b, c, ...$ appropriately. Repeat this $n-r$ times with all of the parameters that were not chosen as $q'$-parameters until you have constructed $n-r$ dimensionless groups. TIP: In fluid mechanics, it's often a good idea to choose the $q'$ to be a characteristic velocity, characteristic length and a fluid property involving mass, if possible.
+	\item State the dimensionless relationship. To do so, write down a relationship of the form presented in eq. (\ref{eq:dimensional_analysis_buckingham_theorem}).
+	\item Use physical intuition/knowledge to simplify the dimensionless relationship if possible.
+
+\end{enumerate}
+
+\subsection{Dynamical Similarity}
+The principle of \textit{dynamical similarity} can be formulated as:
+
+\textit{If two systems are geometrically similar (e.g. a model of a wing with the exact same shape as the real wing) and if each independent dimensionless parameter for the model system is equal to the corresponding independent dimensionless parameter for the true system, then the dependent dimensionless parameters for the model and true system will be equal as well.}
+
+In other words, two systems are dynamically similar if they are geometrically identical (except for scale) and have the same dimensionless parameters, in which case the fluid dynamics of the two systems will be identical.
 
 \newpage
 \section{Mathematical Interludes}
