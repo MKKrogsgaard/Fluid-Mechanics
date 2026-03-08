@@ -84,6 +84,9 @@
 
 \maketitle
 
+\tableofcontents
+
+\newpage
 \section{Introduction and Flow Kinematics}
 \subsection{Streamlines, pathlines and streaklines}
 
@@ -484,7 +487,7 @@ This equation applies to compressible flow. For incompressible fluids $S_{mm} = 
 \end{align}
 Or in vector notation
 \begin{align}
-	\rho \frac{D \mathbf{u}}{D t} &= \rho \mathbf{g} - \nabla p + \mu \nabla^2 \mathbf{u}
+	\Aboxed{\rho \frac{D \mathbf{u}}{D t} &= \rho \mathbf{g} - \nabla p + \mu \nabla^2 \mathbf{u}} \label{eq:N2_NS_navier_stokes_incompressible}
 \end{align}
 This is the Navier-Stokes equation for \textit{incompressible, Newtonian fluids}.
 
@@ -672,7 +675,8 @@ Which forbids temperature jumps at the boundary.
 
 
 \newpage
-\section{Gravity Wave Example}
+\section{Gravity Waves}
+\subsection{Example: Gravity Waves in a Basin}
 In this section, we will discuss \textit{gravity waves}, which are waves where gravity is the restoring force. We will assume that the wave frequency is much higher than the Coriolis frequency, such that we can neglect the Coriolis effect. We will also assume that the wave amplitudes are so small that all equations of motion and boundary conditions are linear.
 \begin{figure}[h!]
     \centering
@@ -764,15 +768,170 @@ We are done now. Plugging this back into $\phi$ and rewriting the result at bit 
 \begin{align}
 	\phi = \frac{\omega a}{k} \frac{\cosh(k(z + H)}{\sinh(kH)} \sin(k x - \omega t)
 \end{align}
-Which in turn gives the velocity field
+Which in turn gives the velocity field ($v$ is zero)
 \begin{align}
-	u = \omega a \frac{\cosh(k(z + H)}{\sinh(kH)} \cos(k x - \omega t), \quad \omega a \frac{\sinh(k(z + H)}{\sinh(kH)} \sin(k x - \omega t)
+	\Aboxed{u = \omega a \frac{\cosh(k(z + H)}{\sinh(kH)} \cos(k x - \omega t), \quad w =\omega a \frac{\sinh(k(z + H)}{\sinh(kH)} \sin(k x - \omega t)}
 \end{align}
-We can also find the dispersion relation. Using (\ref{eq:gravity_wave_b3}) gives
+We can also find the \textit{dispersion relation}. Using (\ref{eq:gravity_wave_b3}) gives
 \begin{align}
 	- \frac{\omega^2}{k} \frac{\cosh(kH)}{\sinh(kH)} 	\cos(kx - \omega t) &\approx - g \eta = - g a \cos(k x - \omega t) \\
-	\implies \omega = \sqrt{g k \tanh(kH)}
+	\implies \Aboxed{\omega &= \sqrt{g k \tanh(kH)}}
 \end{align}
+The associated phase speed is
+\begin{align}
+	\Aboxed{c = \frac{\omega}{k} = \sqrt{\frac{g}{k} \tanh(kH)}}
+\end{align}
+
+We see that $\omega$ depends on $k$. Waves for which this is true are called \textit{dispersive} because the $k$-dependence causes waves with different wave numbers to travel at different speeds, which means that a wave packet made will not retain its shape as time progresses --- the waves of different frequencies that make up the packet will \textit{disperse} over time. This is why the formula for $\omega(k)$ is called the \textit{dispersion relation}.
+
+
+\subsubsection{Deep Water Approximation}
+The deep water approximation is valid in the limit $H/\lambda \gg 1$. Note that $\tanh(x) \rightarrow 1$ for $x \rightarrow \infty$. This leads to the following dispersion relation and phase speed
+\begin{align}
+	\Aboxed{\omega = \sqrt{g k}, \quad c = \sqrt{\frac{g}{k}}}
+\end{align}
+The velocity field components in this limit are
+\begin{align}
+	\Aboxed{u = \omega a e^{kz} \cos(kx - \omega t), \quad w = \omega a e^{kz} \sin(kx - \omega t)}
+\end{align}
+
+
+\subsubsection{Shallow Water Approximation}
+In the shallow water limit, $H/\lambda \ll 1$, we apply $\tanh(x) \approx x$ for small $x$ to see that
+\begin{align}
+	\Aboxed{\omega = k \sqrt{gH}, \quad c = \sqrt{gH}}
+\end{align}
+The velocity field components in this limit are
+\begin{align}
+	\Aboxed{u = \frac{\omega a}{kH} \cos(kx - \omega t), \quad w = \omega a \left(1 + \frac{z}{H} \right) \sin(kx - \omega t)}
+\end{align}
+
+\subsection{The Energy associated with Gravity Waves}
+The potential energy $E_p$ per unit area of a wave system is defined as the work required to deform a unit surface into the disturbed state it is in because of the wave. An equivalent definition defines $E_p$ as the difference in the potential energy of the system in the disturbed and undisturbed states.
+
+For a wave of the type shown in fig. \ref{fig:gravity_waves_eta_illustration}, the potential energy element (per unit length along $y$) is $\rho g z dx dz$, so the potential energy can be computed as
+\begin{align}
+	E_p &= \frac{\rho g}{\lambda} \int_0^\lambda \int_{-H}^\eta z dz dx - \frac{\rho g}{\lambda} \int_0^\lambda \int_{-H}^0 z dz dx \\
+	&= \frac{\rho g}{\lambda} \int_0^\lambda \int_0^\eta z dz dx = \frac{\rho g}{2 \lambda} \int_0^\lambda \eta^2 dx
+\end{align}
+This can also be written in a more useful form involving the mean-square displacement
+\begin{align}
+	\Aboxed{E_p = \frac{1}{2} \rho g \overline{\eta^2}}
+\end{align}
+Incidentally, this means that the average kinetic and potential energies are equal. This is a fluid-mechanical \textit{principle of equipartition of energy} that is valid when the displacement is small and Coriolis effects can be neglected. Hence the total wave energy in the water is
+\begin{align}
+	\Aboxed{E = E_p + E_k = \rho g \overline{\eta^2} = \frac{1}{2} \rho g a^2}
+\end{align}
+Where $a$ is the amplitude of the wave if it is assumed to be of a sinusoidal form.
+
+\newpage
+\section{Vorticity}
+
+
+
+\newpage
+\section{Laminar Flow}
+Recall the Reynolds number, a dimensionless parameter that describes how strong the effects of viscous forces are compared to the inertia of the fluid
+\begin{align}
+	\text{Re} \equiv \frac{\text{inertia force}}{\text{viscous force}} = \frac{\rho U L}{\mu}
+\end{align}
+Where $U$ is the free-stream velocity, $L$ is a typical length scale of the flow and $\mu$ is the viscosity.
+
+A low Reynolds number indicates that viscous forces play a significant role in the flow and that the inviscid approximation is invalid. The following criteria applies:
+\begin{itemize}
+	\item Low $\text{Re}$ leads to \textit{laminar}, smooth, orderly flow. 
+	\item High $\text{Re}$ leads to \textit{turbulent}, irregular, disordered flow.
+\end{itemize}
+The transition between the two regimes happens around $\text{Re} \sim 2000$ to 3000. 
+
+The Reynolds number can also be written as $\text{Re} = U L / \nu$ in terms of the kinematic viscosity $\nu = \mu / \rho$. The kinematic viscosity is related to the vorticity. For a 2D flow in the $xy$-plane
+\begin{align}
+	\frac{D \omega_z}{D t} = \nu \nabla^2 \omega_z
+\end{align}
+Intuitively, $\nu$ measures the tendency for vorticity to diffuse throughout a fluid. This is why $\nu$ is sometimes called the \textit{momentum diffusivity}. However, it is worth remembering that momentum transfer in a fluid flow is not strictly diffusive and advective, as can be seen from the pressure gradient term in the (incompressible) Navier-Stokes equation (\ref{eq:N2_NS_navier_stokes_incompressible})
+\begin{align}
+	\frac{D \mathbf{u}}{D t} = - \frac{1}{\rho} \nabla p + \nu \nabla^2 \mathbf{u}
+\end{align}
+We've dropped the term representing body forces (like gravity) since we'll only be considering the idealized flow through tubes seen from an inertial system in this section.
+
+\subsection{Example: Laminar flow between Infinite Parellel Plates}
+The steady laminar flow between two infinite parallel plates is one of the few situations for which an analytical solution of the Navier-Stokes equations has been found. The situation is shown in fig. \ref{fig:laminar_flow_infinite_plates}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{img/laminar_flow/Lecture6B_FlowBetweenParallelPlates.png}
+    \caption{Steady laminar flow between two infinite parallel plates. The flow is sustained by a pressure gradient in the $x$-direction, as well as the motion of the upper plate with speed $U$ in the $x$-direction.}
+    \label{fig:laminar_flow_infinite_plates}
+\end{figure}
+
+Since the flow velocity in the $x$-direction depends only on $y$, we can write $\partial_x u = 0$ and apply the continuity equation (\ref{eq:N2_NS_continuity_eq}) to get
+\begin{align*}
+	\nabla \cdot \mathbf{u} &= \partial_x u + \partial_y v = 0 \\
+	\implies \partial_y v &= 0
+\end{align*}
+Now consider the $x$- and $y$-components of the Navier-Stokes equation. Since the flow is steady, $\frac{D \mathbf{u}}{D t} = 0$, so the $x$-component tells us that
+\begin{align}
+	\frac{1}{\rho} \partial_x p &= \nu \partial_{yy} u = 0 \\
+	\implies \partial_x p &= \text{const.} = \frac{d p }{d x}
+\end{align}
+While the $y$-component leads to
+\begin{align}
+	\frac{1}{\rho} \partial_y p &= 0 \\
+	\implies p &= p(x)
+\end{align}
+Knowing that $p$ is only dependent on $x$, we can integrate the $x$ momentum equation twice with respect to $y$ (noting that $\rho \nu = \mu$) in order to obtain
+\begin{align}
+	0 = -\frac{y^2}{2} \frac{d p}{d x} + \mu u + A y + B
+\end{align}
+For some undetermined constants $A$ and $B$. To find them, we apply the boundary conditions $u = 0$ at $y = 0$ and $u = U$ at $y = h$, which leads to
+\begin{align}
+	u(y) = \frac{U}{h} y - \frac{1}{2\mu} \frac{d p}{d x} y (h-y)
+\end{align}
+
+\subsection{Lubrication Theory}
+In general, linear or simply varying velocity profiles in a confined space lead to laminar flow. Lubrication theory is an attempt to find approximate solutions for viscous flow when the geometry is more complicated but at least one of the transverse flow dimensions is small. Consider a 2D flow along a geometrically complex, but narrow tunnel, such as the one shown in fig. \ref{fig:laminar_flow_lubrication_theory}. The length of the passage $L$ is assumed to be much greater than the gap height $h$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{img/laminar_flow/Lecture6B_ParallelFlowFilmThickness.png}
+    \caption{Viscous flow in a film bounded by a flat bottom surface and a complex upper surface. The film thickness is $h(x,t)$.}
+    \label{fig:laminar_flow_lubrication_theory}
+\end{figure}
+
+We begin by writing down the continuity equation and the momentum-equation for each component of the flow
+\begin{align}
+	\partial_x u + \partial_y v &= 0 \\
+	\partial_t u + u \partial_x u + v \partial_y u &= -\frac{1}{\rho} \partial_x p + \frac{\mu}{\rho}(\partial_{xx} u + \partial_{yy} u) \\
+	\partial_t v + u \partial_x v + v \partial_y v &= -\frac{1}{\rho} \partial_y p + \frac{\mu}{\rho}(\partial_{xx} v + \partial_{yy} v)
+\end{align}
+The boundary conditions are $u = U_0(t)$ at $y=0$ and $u = U_h(t)$ at $y=h$. We will assume that the pressure is of the form $p=p(x,t)$. We proceed to non-dimensionalize the parameters in the problem, as this will help us decide which terms can be neglected later
+\begin{align}
+	x^* = \frac{x}{L}, \quad y^* = \frac{y}{h} = \frac{y}{\varepsilon L}, \quad t^* = \frac{Ut}{L}, \quad u^* = \frac{u}{U}, \quad v^* = \frac{v}{\varepsilon U}, \quad p^* = \frac{p}{P_a}
+\end{align}
+Where $P_a$ is the atmospheric pressure and $\varepsilon = h/L$ is the fineness ratio of the passage. The dimensionless form of our previous equations is
+\begin{align}
+	\partial_{x^*} u^* + \partial_{y^*} v^* &= 0 \\
+	\varepsilon^2 \text{Re} (\partial_{t^*} u^* + u^* \partial_{x^*} u^* + v^* \partial_{y^*} u^*) &= - \frac{1}{\Lambda} \partial_{x^*} p^* + \varepsilon^2 \partial_{x^* x^*} u^* + \partial_{y^* y^*} u^* \\
+	\varepsilon^4 \text{Re} (\partial_{t^*} v^* + u^* \partial_{x^*} v^* + v^* \partial_{y^*} v^*) &= - \frac{1}{\Lambda} \partial_{y^*} p^* + \varepsilon^4 \partial_{x^* x^*} v^* + \varepsilon^2 \partial_{y^* y^*} v^*
+\end{align}
+Here $\Lambda = \mu U L / P_ah^2$ is the dimensionless ratio of the viscous and pressure forces on a fluid element, called the \textit{bearing number}. Consider the scales of the various dimensionless parameters in this problem
+\begin{align*}
+	\Lambda \sim 1, \quad \text{Re} \text{ finite}, \quad \varepsilon \ll 1
+\end{align*}
+So we can neglect terms with $\varepsilon^2$. Now that we know which terms can be neglected, we can go back and consider our original momentum equations, without these terms. The $x$ and $y$ momentum equations lead to
+\begin{align}
+	- \partial_x p + \mu \partial_{yy} u \approx 0, \quad \partial_y p \approx 0
+\end{align}
+Integrating twice with respect to $y$ leads to
+\begin{align}
+	\implies u(x,y,t) \approx \frac{1}{\mu} \partial_x p(x,t) \frac{y^2}{2} + Ay + B
+\end{align}
+Applying the boundary conditions $u = U_0(t)$ at $y=0$ and $u = U_h(t)$ at $y=h$ leads to our final result for the velocity field
+\begin{align}
+	\Aboxed{u(x,y,t) \approx -\frac{h(x,t)}{2\mu} \partial_x p(x,t) y \left( 1 - \frac{y}{h(x,t)} \right) + (U_h(t) - U_0(t)) \frac{y}{h(x,t)} + U_0(t)}
+\end{align}
+
+
 
 
 \newpage

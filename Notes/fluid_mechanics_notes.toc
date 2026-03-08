@@ -1,0 +1,43 @@
+\contentsline {section}{\numberline {1}Introduction and Flow Kinematics}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Streamlines, pathlines and streaklines}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Lagrangian and Eulerian descriptions}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Kinematics}{4}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Translation}{5}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Rotation}{5}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}Angular Deformation}{6}{subsubsection.1.3.3}%
+\contentsline {subsubsection}{\numberline {1.3.4}Linear Deformation}{7}{subsubsection.1.3.4}%
+\contentsline {subsubsection}{\numberline {1.3.5}Tensor Representation of Deformation}{7}{subsubsection.1.3.5}%
+\contentsline {section}{\numberline {2}From Newton's Second Law to the Navier-Stokes Equations}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Conservation of Mass in an arbitrary Control Volume}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}The Continuity Equation}{9}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Conservation of Momentum in an arbitrary Control Volume}{9}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Tensor Representation of Body and Surface Forces}{10}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Differential form of Momentum Conservation (Cauchy's Equation)}{10}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Constitutive Equation for a Newtonian Fluid}{11}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Stress Tensor Interlude}{11}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}The Constitutive Equation}{13}{subsubsection.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.3}Non-Newtonian fluid}{13}{subsubsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.7}The Navier-Stokes Momentum equation}{14}{subsection.2.7}%
+\contentsline {section}{\numberline {3}Special Equations derived from the Navier-Stokes Equation}{15}{section.3}%
+\contentsline {subsection}{\numberline {3.1}The Bernoulli Equations}{15}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Boundary Conditions}{16}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Conservation of Mass Boundary Condition}{16}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Constant Surface Tension Boundary Condition}{16}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Balance of Forces Calculation}{17}{subsubsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.3}Conservation of Momentum Boundary Condition}{19}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}The No-Slip Condition}{20}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Control Volume Boundary Conditions}{20}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.4}Conservation of Energy Boundary Conditions}{20}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Gravity Waves}{21}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Example: Gravity Waves in a Basin}{21}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Deep Water Approximation}{23}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Shallow Water Approximation}{24}{subsubsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.2}The Energy associated with Gravity Waves}{24}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Vorticity}{25}{section.6}%
+\contentsline {section}{\numberline {7}Laminar Flow}{26}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Example: Laminar flow between Infinite Parellel Plates}{26}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Lubrication Theory}{27}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Dynamic Similarity}{30}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Dimensional Analysis and Dimensionless Forms}{30}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Dynamical Similarity}{31}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Mathematical Interludes}{32}{section.9}%
