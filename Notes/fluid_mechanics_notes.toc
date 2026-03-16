@@ -32,17 +32,17 @@
 \contentsline {subsection}{\numberline {4.4}Conservation of Energy Boundary Conditions}{22}{subsection.4.4}%
 \contentsline {section}{\numberline {5}Introduction to Waves}{23}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Basic concepts}{23}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Example: Internal waves in a continuously stratified fluid}{23}{subsection.5.2}%
-\contentsline {section}{\numberline {6}Gravity Waves}{26}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Example: Gravity Waves in a Basin}{26}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}Deep Water Approximation}{28}{subsubsection.6.1.1}%
-\contentsline {subsubsection}{\numberline {6.1.2}Shallow Water Approximation}{29}{subsubsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.2}The Energy associated with Gravity Waves}{29}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Vorticity}{30}{section.7}%
-\contentsline {section}{\numberline {8}Laminar Flow}{31}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Example: Laminar flow between Infinite Parellel Plates}{31}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Lubrication Theory}{32}{subsection.8.2}%
-\contentsline {section}{\numberline {9}Dynamic Similarity}{35}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Dimensional Analysis and Dimensionless Forms}{35}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Dynamical Similarity}{36}{subsection.9.2}%
-\contentsline {section}{\numberline {10}Mathematical Interludes}{37}{section.10}%
+\contentsline {subsection}{\numberline {5.2}Example: Internal gravity waves in a continuously stratified fluid}{24}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Gravity Waves}{27}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Example: Gravity Waves in a Basin}{27}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Deep Water Approximation}{30}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Shallow Water Approximation}{30}{subsubsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.2}The Energy associated with Gravity Waves}{30}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Vorticity}{31}{section.7}%
+\contentsline {section}{\numberline {8}Laminar Flow}{32}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Example: Laminar flow between Infinite Parellel Plates}{32}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Lubrication Theory}{33}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Dynamic Similarity}{36}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Dimensional Analysis and Dimensionless Forms}{36}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Dynamical Similarity}{37}{subsection.9.2}%
+\contentsline {section}{\numberline {10}Mathematical Interludes}{38}{section.10}%

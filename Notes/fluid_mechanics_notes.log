@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.2.28)  16 MAR 2026 11:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.2.28)  16 MAR 2026 12:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1177,70 +1177,59 @@ Package pdftex.def Info: img/boundary_cond/Lecture2A_InterfaceTwoMediaBoundaryC
 onditions.png  used on input line 703.
 (pdftex.def)             Requested size: 271.7835pt x 120.97362pt.
  [21] [22]
-Overfull \hbox (9.59317pt too wide) in paragraph at lines 770--770
-[]\OT1/cmr/bx/n/14.4 Example: In-ter-nal waves in a con-tin-u-ously strat-i-fie
-d fluid 
- []
-
-[23]
-
-LaTeX Warning: Reference `eq:wave_intro_incompressibilty_eq' on page 24 undefin
-ed on input line 802.
-
-
-LaTeX Warning: Reference `eq:wave_intro_boussinesq_z' on page 24 undefined on i
-nput line 802.
-
-[24] [25]
-<img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves.jpg, id=616, 264.13725pt
+[23] [24] [25]
+<img/wave_intro/Lecture2B_PhaseandGroupPropagation.png, id=631, 726.46407pt x 3
+26.72063pt>
+File: img/wave_intro/Lecture2B_PhaseandGroupPropagation.png Graphic file (type 
+png)
+<use img/wave_intro/Lecture2B_PhaseandGroupPropagation.png>
+Package pdftex.def Info: img/wave_intro/Lecture2B_PhaseandGroupPropagation.png 
+ used on input line 863.
+(pdftex.def)             Requested size: 317.07614pt x 142.6059pt.
+ [26 <./img/wave_intro/Lecture2B_PhaseandGroupPropagation.png>]
+<img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves.jpg, id=642, 264.13725pt
  x 143.26088pt>
 File: img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves.jpg Graphic file (t
 ype jpg)
 <use img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves.jpg>
 Package pdftex.def Info: img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves.
-jpg  used on input line 818.
-(pdftex.def)             Requested size: 181.18439pt x 98.27301pt.
- [26 <./img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves.jpg>]
-[27] [28] [29] [30]
-<img/laminar_flow/Lecture6B_FlowBetweenParallelPlates.png, id=676, 373.89688pt 
+jpg  used on input line 876.
+(pdftex.def)             Requested size: 271.7835pt x 147.4139pt.
+
+[27 <./img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves.jpg>] [28]
+[29] [30] [31]
+<img/laminar_flow/Lecture6B_FlowBetweenParallelPlates.png, id=703, 373.89688pt 
 x 174.15062pt>
 File: img/laminar_flow/Lecture6B_FlowBetweenParallelPlates.png Graphic file (ty
 pe png)
 <use img/laminar_flow/Lecture6B_FlowBetweenParallelPlates.png>
 Package pdftex.def Info: img/laminar_flow/Lecture6B_FlowBetweenParallelPlates.p
-ng  used on input line 997.
+ng  used on input line 1055.
 (pdftex.def)             Requested size: 271.7835pt x 126.59477pt.
- [31]
-<img/laminar_flow/Lecture6B_ParallelFlowFilmThickness.png, id=688, 1333.98375pt
+ [32]
+<img/laminar_flow/Lecture6B_ParallelFlowFilmThickness.png, id=714, 1333.98375pt
  x 245.41687pt>
 File: img/laminar_flow/Lecture6B_ParallelFlowFilmThickness.png Graphic file (ty
 pe png)
 <use img/laminar_flow/Lecture6B_ParallelFlowFilmThickness.png>
 Package pdftex.def Info: img/laminar_flow/Lecture6B_ParallelFlowFilmThickness.p
-ng  used on input line 1031.
+ng  used on input line 1089.
 (pdftex.def)             Requested size: 271.7835pt x 49.99995pt.
- [32 <./img/laminar_flow/Lecture6B_FlowBetweenParallelPlates.png>] [33 <./img/l
+ [33 <./img/laminar_flow/Lecture6B_FlowBetweenParallelPlates.png>] [34 <./img/l
 aminar_flow/Lecture6B_ParallelFlowFilmThickness.png>]
-[34] [35] [36] [37] (fluid_mechanics_notes.aux)
+[35] [36] [37] [38] (fluid_mechanics_notes.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `fluid_mechanics_notes.out' has not changed.
-(rerunfilecheck)             Checksum: C0C761A35BA4ADD4B4168F09B1379770;10737.
+(rerunfilecheck)             Checksum: DC9C0429DDB32F8031D5BAC749A9E2FA;10780.
  ) 
 Here is how much of TeX's memory you used:
- 32664 strings out of 467868
- 693149 string characters out of 5423210
+ 32688 strings out of 467868
+ 693914 string characters out of 5423210
  1065968 words of memory out of 5000000
- 60777 multiletter control sequences out of 15000+600000
+ 60787 multiletter control sequences out of 15000+600000
  644799 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,16n,107p,812b,1185s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1259,9 +1248,9 @@ iktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/focus/.mi
 ktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb></home/focus/.mikt
 ex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home/focus/.miktex
 /texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on fluid_mechanics_notes.pdf (37 pages, 850143 bytes).
+Output written on fluid_mechanics_notes.pdf (38 pages, 943665 bytes).
 PDF statistics:
- 867 PDF objects out of 1000 (max. 8388607)
- 287 named destinations out of 1000 (max. 500000)
- 442 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 897 PDF objects out of 1000 (max. 8388607)
+ 301 named destinations out of 1000 (max. 500000)
+ 447 words of extra memory for PDF output out of 10000 (max. 10000000)
 

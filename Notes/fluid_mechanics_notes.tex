@@ -746,10 +746,10 @@ Waves are examples of solutions to the Navier-Stokes equation. If the system is 
 \begin{align}
 	\phi(\mathbf{x}, t) = \text{Re} \left(A e^{i(\mathbf{k} \cdot \mathbf{x} - \omega t} \right)
 \end{align}
-It is sometimes useful to introduce the \textbf{phase} of the wave $\theta = \mathbf{k} \cdot \mathbf{x} - \omega t$. Note that a plane wave is spatially periodic with a wavelength $\lambda$. Consider a scalar distance $s$ perpendicular to a line of constant phase. By considering this situation, we see that the wavelength related to the wave number $k = |\mathbf{k}|$ by
+It is sometimes useful to introduce the \textbf{phase} of the wave $\theta = \mathbf{k} \cdot \mathbf{x} - \omega t$. Note that a plane wave is spatially periodic with a wavelength $\lambda$. Consider a scalar distance $s$ perpendicular to a line of constant phase. By considering this situation, we see that the wavelength related to the wave number $|\mathbf{k}|$ by
 \begin{align}
 	\phi(ks) &= \phi(ks + \lambda) \notag \\
-	\implies k &= \frac{2 \pi}{\lambda}
+	\implies |\mathbf{k}| &= \frac{2 \pi}{\lambda}
 \end{align}
 Thus the wavelength $\lambda$ is the distance between the two nearest points where the wave has the same phase. It is also worth noting that
 \begin{align}
@@ -761,13 +761,20 @@ So $\omega$ is the rate of decrease of the phase. There is also a temporal perio
 \end{align}
 $T$ is the shortest time it can take for the same phase to reappear.
 
-The \textbf{phase speed} of the wave is defined as the propagation speed of the phase in the direction of the wave vector
+The \textbf{phase velocity} of the wave is defined as the propagation velocity of the phase in the direction of the wave vector
 \begin{align}
-	c = \frac{\omega}{k}
+	\mathbf{c} = \frac{\omega}{k} \mathbf{e}_k
 \end{align}
 Note that the angular frequency and wave number are often related by a \textbf{dispersion relation} $\omega(k)$. The term dispersion relation stems from the fact that this leads wave components with different wave numbers to travel at different speeds, which causes wave packets to spread out or ''disperse'' over time.
 
-\subsection{Example: Internal waves in a continuously stratified fluid}
+The \textbf{group velocity} of the wave with a wave vector $\mathbf{k} = (k, l, m)$ is defined as
+\begin{align}
+	\mathbf{c}_g = (\partial_k \omega) \mathbf{e}_x + (\partial_l \omega) \mathbf{e}_y + (\partial_m \omega) \mathbf{e}_z
+\end{align}
+The group velocity is the velocity with which the overall wave envelope moves (as opposed to the individual wave fronts, which move with the phase velocity). The group velocity is also the velocity of propagation of the energy in the wave.
+
+
+\subsection{Example: Internal gravity waves in a continuously stratified fluid}
 Consider a continuously stratified fluid, with the following assumptions for simplicity
 \begin{itemize}
 	\item The wave motion is inviscid because the velocity gradients are small and Reynolds number is large
@@ -808,6 +815,57 @@ This is the linearized density equation. Physically, this means that the density
 \end{align}
 Where $N^2 = - \frac{g}{\rho_0}\partial_z \bar{\rho}$ is the Brunt-Väisälä frequency (also called the \textit{buoyancy frequency}). We see that the perturbation variables $p'$ and $\rho'$ replace their equivalents when we linearize the system.
 
+We can now take the time derivative of the incompressibility equation (\ref{eq:wave_intro_incompressibilty_eq}) and use the results we just found for $\partial_t u$ and $\partial_t v$ to get
+\begin{align}
+	\frac{1}{\rho_0} \nabla_H^2 p' = \partial_{zt} w \label{eq:wave_intro_horizontal_laplace_1}
+\end{align}
+Where $\nabla_H^2 = \partial_{xx} + \partial_{yy}$ is the horizontal Laplacian operator. By applying the equation for $\partial_t w$ and $\partial_t \rho' - \frac{N^2 \rho_0}{g} w = 0$, we get
+\begin{align}
+	\frac{1}{\rho_0} \partial_t p' = \partial_{zz} w - N^2 w
+\end{align}
+By combining this result with (\ref{eq:wave_intro_horizontal_laplace_1}), it is possible to arrive at (SHOW THIS IN MORE DETAIL)
+\begin{align}
+	\partial_{tt} (\partial_{zz} w) &= - \nabla_H^2 \left(\partial_{tt} w + N^2 w\right) \\
+	\Leftrightarrow \Aboxed{ \partial_{tt} (\nabla^2 w) &= - N^2 \nabla_H^2 w } \label{eq:wave_intro_vert_governing_eq}
+\end{align}
+Eq. (\ref{eq:wave_intro_vert_governing_eq}) is the governing equation for the vertical velocity $w$. It will be very useful when we proceed to derive the dispersion relation for internal gravity waves, which we will do in a moment.
+
+Since the fluid is continuously stratified and the waves may propagate in any direction, the dispersion relation will be anisotropic
+\begin{align}
+	\omega = \omega(\mathbf{k})
+\end{align}
+Where $\mathbf{k} = (k, l, m)$ is the wave vector. Consider a plane wave of the form 
+\begin{align}
+	w = w_0 e^{i(\mathbf{k} \cdot \mathbf{x} - \omega t)}
+\end{align}
+Substituting this into the governing equation (\ref{eq:wave_intro_vert_governing_eq}) (and assuming $N^2 = \text{const.}$) leads to the following dispersion relation
+\begin{align}
+	\omega^2 = \frac{k^2 + l^2}{k^2 + l^2 + m^2} N^2
+\end{align}
+If we choose our coordinate system such that $\mathbf{k}$ lies in the $xz$-plane, this simplifies to
+\begin{align*}
+	\omega = \frac{kN}{\sqrt{k^2 + m^2}}
+\end{align*}
+
+The phase velocity and group velocity are
+\begin{align}
+	\mathbf{c} &= \frac{\omega}{k} \mathbf{e}_k \\
+	&= \frac{\omega}{|\mathbf{k}|^2} (k \mathbf{e}-x + m \mathbf{e}_z)
+\end{align}
+and
+\begin{align}
+	\mathbf{c}_g &= (\partial_k \omega) \mathbf{e}_x + (\partial_l \omega) \mathbf{e}_y + (\partial_m \omega) \mathbf{e}_z \\
+	&= \frac{N m}{|\mathbf{k}|^3} (m \mathbf{e}_x - k \mathbf{e}_z)
+\end{align}
+Interestingly, the phase and group velocities are perpendicular. Their horizontal components point in the same direction, but their vertical components are opposite. Fig. \ref{fig:wave_intro_opposite_phase_and_group_velocity} illustrates how this means that wave crests move side-to-side in a motion perpendicular to the wave envelope motion.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/wave_intro/Lecture2B_PhaseandGroupPropagation.png}
+    \caption{An illustration of the propagation of the internal gravity waves with perpendicular $\mathbf{c}$ and $\mathbf{c}_g$. Note how the wave crests move sideways compared to the motion of the wave envelopes.}
+    \label{fig:wave_intro_opposite_phase_and_group_velocity}
+\end{figure}
+
+
 
 \newpage
 \section{Gravity Waves}
@@ -815,7 +873,7 @@ Where $N^2 = - \frac{g}{\rho_0}\partial_z \bar{\rho}$ is the Brunt-Väisälä fr
 In this section, we will discuss \textit{gravity waves}, which are waves where gravity is the restoring force. We will assume that the wave frequency is much higher than the Coriolis frequency, such that we can neglect the Coriolis effect. We will also assume that the wave amplitudes are so small that all equations of motion and boundary conditions are linear.
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.4\textwidth]{img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves.jpg}
+    \includegraphics[width=0.6\textwidth]{img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves.jpg}
     \caption{An illustration of the linear liquid-surface gravity-waves. The $x$-axis has been chosen in the direction of propagation of the wave. $\eta$ measures the vertical deviation of the fluid surface from its equilibrium height $z=0$ and $H$ is the depth of the basin.}
     \label{fig:gravity_waves_eta_illustration}
 \end{figure}
