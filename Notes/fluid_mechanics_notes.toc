@@ -22,27 +22,37 @@
 \contentsline {subsection}{\numberline {3.1}Navier-Stokes in a non-inertial frame of reference}{15}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Navier-Stokes in (non-inertial) spherical coordinates}{16}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}The Boussinesq approximation}{17}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Boundary Conditions}{18}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Conservation of Mass Boundary Condition}{18}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Constant Surface Tension Boundary Condition}{18}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Balance of Forces Calculation}{19}{subsubsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.3}Conservation of Momentum Boundary Condition}{21}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}The No-Slip Condition}{22}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Control Volume Boundary Conditions}{22}{subsubsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.4}Conservation of Energy Boundary Conditions}{22}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Introduction to Waves}{23}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Basic concepts}{23}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Example: Internal gravity waves in a continuously stratified fluid}{24}{subsection.5.2}%
-\contentsline {section}{\numberline {6}Gravity Waves}{27}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Example: Gravity Waves in a Basin}{27}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}Deep Water Approximation}{30}{subsubsection.6.1.1}%
-\contentsline {subsubsection}{\numberline {6.1.2}Shallow Water Approximation}{30}{subsubsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.2}The Energy associated with Gravity Waves}{30}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Vorticity}{31}{section.7}%
-\contentsline {section}{\numberline {8}Laminar Flow}{32}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Example: Laminar flow between Infinite Parellel Plates}{32}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Lubrication Theory}{33}{subsection.8.2}%
-\contentsline {section}{\numberline {9}Dynamic Similarity}{36}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Dimensional Analysis and Dimensionless Forms}{36}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Dynamical Similarity}{37}{subsection.9.2}%
-\contentsline {section}{\numberline {10}Mathematical Interludes}{38}{section.10}%
+\contentsline {subsection}{\numberline {3.4}The theory of ideal fluids}{17}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Bernoulli's theorem}{17}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Bernoulli's equation}{18}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Boundary Conditions}{19}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Conservation of Mass Boundary Condition}{19}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Constant Surface Tension Boundary Condition}{19}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Balance of Forces Calculation}{20}{subsubsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.3}Conservation of Momentum Boundary Condition}{22}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}The No-Slip Condition}{23}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Control Volume Boundary Conditions}{23}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.4}Conservation of Energy Boundary Conditions}{23}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Introduction to Waves}{24}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Basic concepts}{24}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Example: Internal gravity waves in a continuously stratified fluid}{25}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Gravity Waves}{28}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Example: Gravity Waves in a Basin}{28}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Deep Water Approximation}{31}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Shallow Water Approximation}{31}{subsubsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.2}The Energy associated with Gravity Waves}{31}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Vorticity theory}{32}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Relation to the Coriolis effect and planetary rotation}{32}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Kelvin's circulation theorem}{33}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Helmholtz's vortex theorem}{33}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Irrotational flow / potential flow}{33}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}The vorticity equation}{34}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}The Biot-Savart law for vorticity}{34}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}The potential vorticity}{34}{subsection.7.7}%
+\contentsline {section}{\numberline {8}Laminar Flow}{36}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Example: Laminar flow between Infinite Parellel Plates}{36}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Lubrication Theory}{37}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Dynamic Similarity}{40}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Dimensional Analysis and Dimensionless Forms}{40}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Dynamical Similarity}{41}{subsection.9.2}%
+\contentsline {section}{\numberline {10}Mathematical Interludes}{42}{section.10}%

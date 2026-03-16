@@ -92,7 +92,7 @@
 
 A \textbf{streamline} is a curve that is locally tangent to the velocity field at every point. This requirement can be expressed as:
 \begin{align}
-	dx/u = dy/v = dz/w
+	dx/u = dy/v = dz/w \label{eq:introduction_steamline_eq}
 \end{align}
 Streamlines can be found by using this relation to establish one or more differential equations.
 
@@ -569,6 +569,62 @@ Where $\mu_v = \frac{2}{3} \mu + \lambda$ is the \textit{coefficient of bulk vis
 \end{comment}
 
 
+\subsection{The theory of ideal fluids}
+Much like thermodynamics has a theory of ideal gasses, fluid mechanics has a theory of ideal fluids. The flow of an ideal fluid is governed by three equations:
+
+The the continuity equation
+\begin{align}
+	\partial_t \rho + \nabla \cdot (\rho \mathbf{u}) = 0
+\end{align}
+Euler's equation of motion
+\begin{align}
+	\frac{D \mathbf{u}}{D t} = - \frac{1}{\rho} \nabla p + \mathbf{f}
+\end{align}
+Here, $\mathbf{f}$ represents external forces.
+
+The final equation is the equation for the adiabatic motion of a fluid particle
+\begin{align}
+	\partial_t s + \mathbf{u} \cdot \nabla s = 0
+\end{align}
+Where $s$ is the entropy per unit mass of the fluid.
+
+\subsection{Bernoulli's theorem}
+Consider an ideal fluid with uniform entropy, constant entropy per unit mass $s$ and where the external force is conservative $\mathbf{f} = - \nabla \phi$. In that case, it is possible to show that Euler's equation of motion becomes
+\begin{align}
+	\Aboxed{ \partial_t \mathbf{u} + \omega \times \mathbf{u} = - \nabla \left( \frac{|\mathbf{u}|^2}{2} + h + \phi \right) }
+\end{align}
+Where $\omega$ is the vorticity and $h = e + p/\rho$ is the enthalpy per unit mass, with $e$ being the internal energy. Two very useful equations can be derived from this equation. The first one can be found by considering irrotational flows, while the other can be found by considering steady flows.
+
+For steady flows, all time derivatives vanish because the field variables are independent of time, in which case we get
+\begin{align}
+	\omega \times \mathbf{u} = - \nabla \left( \frac{|\mathbf{u}|^2}{2} + h + \phi \right)
+\end{align}
+Taking the inner product with $\mathbf{u}$ causes the left hand side to vanish, leading to
+\begin{align}
+	\mathbf{u} \cdot \nabla \left( \frac{|\mathbf{u}|^2}{2} + h + \phi \right) = \partial_\xi  \left( \frac{|\mathbf{u}|^2}{2} + h + \phi \right) = 0
+\end{align}
+The derivative is along a stream line parametrized by the parameter $\xi$. In other words, this means that the function $H$
+\begin{align}
+	\Aboxed{ H \equiv \frac{|\mathbf{u}|^2}{2} + h + \phi } \label{eq:bernoulli_theorem}
+\end{align}
+is constant along streamlines for steady flows. This result is called the \textbf{Bernoulli theorem}. Surfaces of constant $H$ are called \textbf{Bernoulli surfaces}.
+
+Furthermore, if the inner product of $\omega$ and $\omega \times \mathbf{u}$ vanishes, $H$ is analogously constant along vortex lines!
+
+\subsection{Bernoulli's equation}
+
+If the fluid density is constant everywhere $\rho = \rho_0$ the potential for the external forces becomes $\phi = g z$. Then applying the Bernoulli theorem (\ref{eq:bernoulli_theorem}) gives
+\begin{align}
+	H = \frac{|\mathbf{u}|^2}{2} + \frac{p}{\rho_0} + g z = \text{const.}
+\end{align}
+This is called \textbf{Bernoulli's equation}. The terms in the equation represent kinetic energy, pressure potential energy and gravitational potential energy (all per unit mass), so Bernoulli's equation is really a restatement of the conservation of energy for the fluid. The following conditions are needed to guarantee the validity of the equation:
+\begin{itemize}
+	\item It can only be applied along a streamline, because the mechanical energy is constant on each streamline (although it can differ between streamlines).
+	\item It can only be used for steady flow, since the mechanical energy of fluid elements is not conserved in an unsteady flow.
+	\item It can only be used for inviscid flow, since viscosity leads to internal friction in the fluid, which allows mechanical energy to be converted into internal energy.
+	\item It can only be used for incompressible flows, since the internal energy of a compressible flow changes as it is compressed or expanded (e.g. gasses heat up when compressed and cool down when expanded).
+\end{itemize}
+
 \newpage
 \section{Boundary Conditions}
 The following sections include some examples of boundary conditions that can be used to solve the Navier-Stokes equation in various contexts.
@@ -1018,8 +1074,131 @@ Incidentally, this means that the average kinetic and potential energies are equ
 Where $a$ is the amplitude of the wave if it is assumed to be of a sinusoidal form.
 
 \newpage
-\section{Vorticity}
+\section{Vorticity theory}
+First, some definitions. \textbf{Vorticity} is defined as the curl of the velocity field
+\begin{align}
+	\omega = \nabla \times \mathbf{u}
+\end{align}
 
+Lines of constant vorticity are called \textbf{vortex lines}. They are analogous to stream lines in many ways.
+
+The \textbf{circulation} is the velocity line integral around a closed fluid loop. By Stokes' theorem
+\begin{align}
+	\Gamma = \oint_{\partial S} \mathbf{u} \cdot d\mathbf{r} = \int_S \omega \cdot \mathbf{n} dS
+\end{align}
+Considering the circulation around an infinitesimal area with the surface element $\delta S$ (whose surface normal points in the direction of the unit vector $\mathbf{n}$) leads to
+\begin{align}
+	\mathbf{n} \cdot \omega = \frac{1}{\delta S} \oint_{\delta r} \mathbf{u} \cdot d \mathbf{r}
+\end{align}
+This means that at any given point, the component of $\omega$ in the direction of an arbitrary normal vector $\mathbf{n}$ is proportional to the circulation around the surrounding infinitesimal fluid loop. 
+
+See the subsection on rotational motion in the section on kinematics for a detailed discussion of the relationship between vorticity and the rotation of fluid segments.
+
+\subsection{Relation to the Coriolis effect and planetary rotation}
+The vorticity observed in a non-inertial frame of reference is sometimes called the \textbf{absolute vorticity} to distinguish it from the vorticity in a rotating frame. It follows the usual definition of vorticity as the curl of the velocity observed in the inertial frame
+\begin{align}
+	\omega_a = \nabla \times (\mathbf{u} + \Omega \times \mathbf{r}) = \omega + 2 \Omega
+\end{align}
+Where $\Omega$ is the angular velocity of the rotating frame. In the context of the Earth, the term $2 \Omega$ is called the \textbf{planetary vorticity}. The component of the planetary vorticity that is normal to Earth's surface is called the \textbf{Coriolis parameter}
+\begin{align}
+	f = 2 \Omega \sin \theta
+\end{align}
+Where $\theta$ is the latitude.
+
+The magnitude of the component of the vorticity that is normal to Earth's surface is on the order of the magnitude of the component of the fluid velocity that is tangent to the surface, divided by the characteristic length scale for the flow
+\begin{align}
+	\omega_n \sim \left(\frac{\mathbf{u}_n}{L}\right)
+\end{align}
+The \textbf{local Rossby number} $R_0$ is defined as this quantity divided by the Coriolis frequency, and it is a measure of the strength of the local vorticity. Since the tangential component of the velocity is usually very small, this leads to the following definition
+\begin{align}
+	\frac{\omega_n}{f} = \frac{\mathbf{u}_n}{fL} = \frac{\mathbf{u}_n}{2 \Omega L \sin \theta} = \frac{\varepsilon}{\sin \theta} \equiv R_0
+\end{align} 
+When $R_0 \ll 1$, the flow is dominated by Earth's rotation and the local vorticity is negligible. Similarly, when $R_0 \gg 1$, the flow is dominated by local vorticity effects and planetary rotation can be neglected. When $R_0 \sim 1$ both planetary effects and local vorticity must be considered.
+
+\subsection{Kelvin's circulation theorem}
+Kelvin's circulation theorem states:
+
+\textit{In an inviscid, barotropic flow with conservative body forces, the circulation around a closed curve moving with the fluid remains constant with time. In other words, under those conditions}
+\begin{align}
+	\frac{D\Gamma}{Dt} = 0
+\end{align}
+Kelvin's circulation theorem is equivalent to the statement that there are only three ways to create or destroy vorticity in a flow:
+\begin{enumerate}
+	\item Non-conservative body forces
+	\item A non-barotropic pressure-density relationship
+	\item Nonzero net viscous torques
+\end{enumerate}
+Naturally, it follows that the vorticity of a flow will remain unaffected if the above influences are not present.
+
+\subsection{Helmholtz's vortex theorem}
+Helmholtz proved that the following hold for vortex motion under the restrictions that are needed for Kelvin's circulation theorem:
+\begin{enumerate}
+	\item Vortex lines move with the fluid.
+	\item The circulation of a vortex tube (its ''strength'') is constant along the length of the vortex tube.
+	\item A vortex tube cannot end within the fluid. It must end at a boundary or form a closed loop.
+	\item The circulation (strength) of a vortex tube remains constant over time.
+\end{enumerate}
+
+\subsection{Irrotational flow / potential flow}
+If a flow is irrotational, meaning the vorticity is zero, then the velocity field can be written in terms of a potential (this also requires that the domain of the flow is simply-connected)
+\begin{align}
+	\mathbf{u} = \nabla \Phi
+\end{align}
+In this case, Bernoulli's theorem (\ref{eq:bernoulli_equation}) can be used to arrive at the result
+\begin{align}
+	\partial_t \Phi + \frac{|\mathbf{u}|^2}{2} + h + \phi = \text{const.}
+\end{align}
+This equation is sometimes called the \textbf{integral of motion} for the fluid because it can be integrated to obtain an expression for $\Phi$.
+
+\subsection{The vorticity equation}
+In an inertial frame of reference, one can write down so-called \textbf{vorticity equations} that the vorticity must obey.
+
+For a \textit{compressible, inviscid} fluid of constant density (i.e. one with baritropic flow), the vorticity obeys the following equation
+\begin{align}
+	\partial_t \omega + \nabla \times (\omega \times \mathbf{u}) = 0
+\end{align}
+For a \textit{incompressible, viscous} fluid with kinetic viscosity $\nu$, it obeys the equation
+\begin{align}
+	\frac{D \omega}{D t} = \underbrace{(\omega \cdot \nabla) \mathbf{u}}_\text{caused by stretching/tilting of vortex lines} + \underbrace{\nu\nabla^2 \omega}_\text{caused by diffusion of vorticity}
+\end{align}
+The viscosity of the flow allows vorticity to diffuse throughout the flow, since fluid segments can pull on nearby fluid segments through viscous friction. This viscous vorticity equation can also be written for a non-inertial frame of reference
+\begin{align}
+	\frac{D \omega}{D t} = (\omega + 2 \Omega) \cdot \nabla \mathbf{u} + \frac{1}{\rho^2} \nabla \rho \times \nabla p + \nu \nabla^2 \omega
+\end{align}
+
+
+\subsection{The Biot-Savart law for vorticity}
+There is a vorticity equivalent of the Biot-Savart law from electromagnetism. It gives the velocity field when the vorticity is known and applies to incompressible flows. For a fluid volume $V'$
+\begin{align}
+	\mathbf{u}(\mathbf{x}, t) = \frac{1}{4 \pi} \int_{V'} \frac{\omega(\mathbf{x}', t) \times (\mathbf{x} - \mathbf{x}')}{|\mathbf{x} - \mathbf{x}'|^3} d\mathbf{x}'
+\end{align}
+Where the integral is over the entire volume $V'$.
+
+This can be further specialized to a slender vortex element of length $dl$ by choosing $V' = \Delta A' dl$. Then the velocity \textit{induced by that slender vortex} is
+\begin{align}
+	\mathbf{u}(\mathbf{x}, t) = \frac{\Gamma}{4 \pi} \int_{V'} \mathbf{e}_\omega(\mathbf{x}') \times \frac{\mathbf{x} - \mathbf{x}'}{|\mathbf{x} - \mathbf{x}'|^3} dl
+\end{align}
+Where $\mathbf{e}_\omega(\mathbf{x}')$ is the direction of the vortex element at $\mathbf{x}'$ and $\Gamma$ is the circulation around the vortex (which is constant along the length of the vortex, by Helmholtz's vortex theorem).
+
+\subsection{The potential vorticity}
+If the following conditions hold:
+\begin{itemize}
+	\item $\lambda$ is a conserved quantity for each fluid element
+	\item The frictional force is negligible
+\end{itemize}
+And either one of the following conditions holds:
+\begin{itemize}
+	\item The fluid is barotropic, i.e. $\nabla \rho \times \nabla p = 0$
+	\item $\lambda$ is only a function of $p$ and $\rho$
+\end{itemize}
+Then the \textbf{potential vorticity}
+\begin{align}
+	\Pi = \frac{\omega + 2 \Omega}{\rho} \cdot \nabla \lambda
+\end{align}
+Is conserved by in each fluid element, i.e.
+\begin{align}
+	\frac{d \Pi}{d t} = 0
+\end{align}
 
 
 \newpage
@@ -1162,7 +1341,5 @@ The principle of \textit{dynamical similarity} can be formulated as:
 
 In other words, two systems are dynamically similar if they are geometrically identical (except for scale) and have the same dimensionless parameters, in which case the fluid dynamics of the two systems will be identical.
 
-\newpage
-\section{Mathematical Interludes}
 
 \end{document}
