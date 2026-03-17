@@ -925,7 +925,7 @@ Interestingly, the phase and group velocities are perpendicular. Their horizonta
 
 \newpage
 \section{Gravity Waves}
-\subsection{Example: Gravity Waves in a Basin}
+\subsection{Example: Simple gravity waves in a basin}
 In this section, we will discuss \textit{gravity waves}, which are waves where gravity is the restoring force. We will assume that the wave frequency is much higher than the Coriolis frequency, such that we can neglect the Coriolis effect. We will also assume that the wave amplitudes are so small that all equations of motion and boundary conditions are linear.
 \begin{figure}[h!]
     \centering
@@ -1055,7 +1055,7 @@ The velocity field components in this limit are
 	\Aboxed{u = \frac{\omega a}{kH} \cos(kx - \omega t), \quad w = \omega a \left(1 + \frac{z}{H} \right) \sin(kx - \omega t)}
 \end{align}
 
-\subsection{The Energy associated with Gravity Waves}
+\subsection{The energy associated with gravity waves}
 The potential energy $E_p$ per unit area of a wave system is defined as the work required to deform a unit surface into the disturbed state it is in because of the wave. An equivalent definition defines $E_p$ as the difference in the potential energy of the system in the disturbed and undisturbed states.
 
 For a wave of the type shown in fig. \ref{fig:gravity_waves_eta_illustration}, the potential energy element (per unit length along $y$) is $\rho g z dx dz$, so the potential energy can be computed as
@@ -1072,6 +1072,24 @@ Incidentally, this means that the average kinetic and potential energies are equ
 	\Aboxed{E = E_p + E_k = \rho g \overline{\eta^2} = \frac{1}{2} \rho g a^2}
 \end{align}
 Where $a$ is the amplitude of the wave if it is assumed to be of a sinusoidal form.
+
+
+\subsection{Planetary gravity waves}
+In our previous discussion on simple gravity waves, we ignored the Coriolis force. In this section, we will see what happens when we include its effects.
+\subsubsection{Kelvin waves}
+In the example dealing with simple gravity waves in a basin, we considered only the parts of the basin that are far from the wall, where the wave motion is exclusively in the $z$-direction. We will now discuss \textbf{Kelvin waves} which are waves that arise near the walls of the basin due to Coriolis effects.
+
+The general (linearized) equations of motion for shallow-water waves subject to the Coriolis force are given by eqs. (13.45)-(13.47) in Kundu:
+\begin{align*}
+    \frac{\partial \eta}{\partial t} + h \left(\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y}\right) = 0, \quad \frac{\partial u}{\partial t} - fv = - g \frac{\partial \eta}{\partial x}, \quad \frac{\partial v}{\partial t} + fu = - g \frac{\partial \eta}{\partial y}
+\end{align*}
+Where $h$ is the depth of the basin and $\eta$ is the displacement of the wave from $z=0$. Without loss of generality, we can consider a Kelvin wave propagating along the side of the basin that is aligned with the $x$-direction. In that case, $v=0$ and the equations of motion become:
+\begin{align*}
+    \frac{\partial \eta}{\partial t} + h \frac{\partial u}{\partial x} = 0, \quad \frac{\partial u}{\partial t} = - g \frac{\partial \eta}{\partial x}, \quad fu = - g \frac{\partial \eta}{\partial y}
+\end{align*}
+The equation involving $\partial_y \eta$ clearly shows that a displacement the $y$-direction is now possible due to the balance between $fu$ and $-g\partial_y \eta$.
+
+
 
 \newpage
 \section{Vorticity theory}
