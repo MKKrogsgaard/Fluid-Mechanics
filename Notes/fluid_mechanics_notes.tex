@@ -925,7 +925,7 @@ Interestingly, the phase and group velocities are perpendicular. Their horizonta
 
 \newpage
 \section{Gravity Waves}
-\subsection{Example: Simple gravity waves in a basin}
+\subsection{Example: Surface gravity waves in a basin}
 In this section, we will discuss \textit{gravity waves}, which are waves where gravity is the restoring force. We will assume that the wave frequency is much higher than the Coriolis frequency, such that we can neglect the Coriolis effect. We will also assume that the wave amplitudes are so small that all equations of motion and boundary conditions are linear.
 \begin{figure}[h!]
     \centering
@@ -1074,21 +1074,96 @@ Incidentally, this means that the average kinetic and potential energies are equ
 Where $a$ is the amplitude of the wave if it is assumed to be of a sinusoidal form.
 
 
-\subsection{Planetary gravity waves}
-In our previous discussion on simple gravity waves, we ignored the Coriolis force. In this section, we will see what happens when we include its effects.
-\subsubsection{Kelvin waves}
-In the example dealing with simple gravity waves in a basin, we considered only the parts of the basin that are far from the wall, where the wave motion is exclusively in the $z$-direction. We will now discuss \textbf{Kelvin waves} which are waves that arise near the walls of the basin due to Coriolis effects.
+\subsection{Gravity waves affected by the Coriolis force}
+In our previous discussion of surface gravity waves, we ignored the Coriolis force. In this section, we will see what happens when we include its effects.
 
-The general (linearized) equations of motion for shallow-water waves subject to the Coriolis force are given by eqs. (13.45)-(13.47) in Kundu:
-\begin{align*}
-    \frac{\partial \eta}{\partial t} + h \left(\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y}\right) = 0, \quad \frac{\partial u}{\partial t} - fv = - g \frac{\partial \eta}{\partial x}, \quad \frac{\partial v}{\partial t} + fu = - g \frac{\partial \eta}{\partial y}
-\end{align*}
-Where $h$ is the depth of the basin and $\eta$ is the displacement of the wave from $z=0$. Without loss of generality, we can consider a Kelvin wave propagating along the side of the basin that is aligned with the $x$-direction. In that case, $v=0$ and the equations of motion become:
-\begin{align*}
-    \frac{\partial \eta}{\partial t} + h \frac{\partial u}{\partial x} = 0, \quad \frac{\partial u}{\partial t} = - g \frac{\partial \eta}{\partial x}, \quad fu = - g \frac{\partial \eta}{\partial y}
-\end{align*}
-The equation involving $\partial_y \eta$ clearly shows that a displacement the $y$-direction is now possible due to the balance between $fu$ and $-g\partial_y \eta$.
+\subsubsection{The linearized shallow-water equations}
+Before we discuss gravity waves affected by the Coriolis force, we need to derive the linearized equations of motion for shallow-water waves. 
 
+Let's start by reminding ourselves that we are considering the same situation that we were in when we discussed surface gravity waves, see fig. \ref{fig:gravity_waves_eta_illustration2}. Note that we have chosen coordinates where $z=0$ at the bottom of the basin. The fluid is assumed to be incompressible.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves2.jpg}
+    \caption{An illustration of the linear liquid-surface gravity-waves. The $x$-axis has been chosen in the direction of propagation of the wave. $\eta$ measures the vertical deviation of the fluid surface from its equilibrium height $z=H$ and $H$ is the depth of the basin.}
+    \label{fig:gravity_waves_eta_illustration2}
+\end{figure}
+
+Our goal will be to simplify the continuity equation and Navier-Stokes equation for this situation using the fact that the wave oscillations are small, which means that we can neglect any terms that are non-linear in the displacement $\eta$ or velocity $\mathbf{u}$.
+
+The pressure at any given point is $p=\rho g h$ where $h$ is the height of the fluid column above that point. Since $h = (H + \eta) - z$ for a point $(x,y,z)$, the pressure is given by
+\begin{align}
+	p(x, y, z, t) = \rho g (H + \eta(x, y, t) - z) \label{eq:linearized_derivation_pressure}
+\end{align}
+We conclude that the pressure gradient is indpendent of $z$, which means that the velocity field governing the wave motion must also be independent of $z$. In particular, $\partial_x u$ and $\partial_y v$ must be independent of $z$.
+
+Now consider the continuity equation (\ref{eq:N2_NS_incompressible_continuity_eq}). Integrating the continuity equation along the $z$-axis over $[0, H + \eta]$ gives
+\begin{align}
+	\int_0^{H + \eta} \partial_x u + \partial_y v + \partial_z w dz &= (H + \eta) \partial_x u + (H + \eta) \partial_y v + w(H + \eta) - w(0) = 0
+\end{align}
+We can simplify this considerably using boundary conditions. For instance, the normal component of the fluid velocity must be zero at $z=0$ so $w(0) = 0$. And the fluid must move with the surface at $H + \eta$ which leads to
+\begin{align}
+	w(H + \eta) - \frac{D \eta}{D t} = \partial_t \eta + u \partial_x \eta + v \partial_y \eta
+\end{align}
+This allows us to write the continuity equation as
+\begin{align}
+	\partial_t + \partial_x \left[u (H + \eta) \right] + \partial_y \left[v (H + \eta) \right] = 0
+\end{align}
+Dropping non-linear terms leads to the final form of the linearized shallow-water continuity equation
+\begin{align}
+	\Aboxed{\partial_t \eta + H \left(\partial_x u + \partial_y v \right) = 0}
+\end{align}
+Deriving the linearized Navier-Stokes equation is a bit trickier, so we will be skipping over some of the steps. Recall the Navier-Stokes equation for an incompressible fluid in a non-inertial reference frame (\ref{eq:N2_NS_navier_stokes_incompressible_noninertial})
+\begin{align*}
+	\rho \frac{D \mathbf{u}}{D t} = - \nabla p + \rho \left[ \mathbf{g} - \frac{d \mathbf{U}}{dt} - 2 \Omega \times \mathbf{u} - \frac{d\Omega}{d t} \times \mathbf{x} - \Omega \times (\Omega \times \mathbf{x})\right] + \mu {\nabla^2}  \mathbf{u}
+\end{align*}
+For waves on length scales that do are small compared to the circumferance of the Earth, the Coriolis force acceleration can be considered constant. Thus we can write
+\begin{align*}
+	2 \Omega \times \mathbf{u} \approx (f v, f u - 2\Omega u \cos \theta)
+\end{align*}
+Where $f$ is the local \textbf{Coriolis parameter} (also called the \textbf{Coriolis frequency}). Using this approximation and neglecting non-linear terms leads to
+\begin{align}
+	\partial_t u - fv &= - \frac{1}{\rho} \partial_x p \\
+	\partial_t v + fu &= - \frac{1}{\rho} \partial_y p \\
+	\partial_t w &= - \frac{1}{\rho} \partial_z p - g
+\end{align}
+The final result is easily found by taking the necessary derivatives of our pressure function (\ref{eq:linearized_derivation_pressure}). Together with the continuity equation, we get the following linearized equations of motion
+\begin{align}
+	\partial_t \eta + H \left(\partial_x u + \partial_y v \right) &= 0 \label{eq:linearized_eqs_1}  \\
+	\partial_t u - fv &= - g \partial_x \eta \\
+	\partial_t v + fu &= - g \partial_y \eta \\
+	\partial_t w &= 0 \label{eq:linearized_eqs_4} 
+\end{align}
+
+\subsubsection{Example: Kelvin waves}
+In the example dealing with surface gravity waves in a basin, we considered only the parts of the basin that are far from the wall, where the wave motion is exclusively in the $z$-direction. We will now discuss \textbf{Kelvin waves} which are waves that arise near the walls of the basin due to Coriolis effects. Kelvin waves occur on length scales where the Coriolis parameter $f$ can be considered constant.
+
+The general (linearized) equations of motion for shallow-water waves subject to the Coriolis force are given by eqs. (\ref{eq:linearized_eqs_1})-(\ref{eq:linearized_eqs_4})
+\begin{align*}
+    \frac{\partial \eta}{\partial t} + H \left(\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y}\right) = 0, \quad \frac{\partial u}{\partial t} - fv = - g \frac{\partial \eta}{\partial x}, \quad \frac{\partial v}{\partial t} + fu = - g \frac{\partial \eta}{\partial y}
+\end{align*}
+Where $h$ is the depth of the basin and $\eta$ is the displacement of the wave from $z=0$. Without loss of generality, we can consider a Kelvin wave propagating along the side of the basin that is aligned with the $x$-direction as in fig. \ref{fig:gravity_waves_eta_illustration2}.. In that case, $v=0$ and the equations of motion become:
+\begin{align*}
+    \frac{\partial \eta}{\partial t} + H \frac{\partial u}{\partial x} = 0, \quad \frac{\partial u}{\partial t} = - g \frac{\partial \eta}{\partial x}, \quad fu = - g \frac{\partial \eta}{\partial y}
+\end{align*}
+The equation involving $\partial_y \eta$ shows that a displacement the $y$-direction is now possible due to the balance between $fu$ and $-g\partial_y \eta$. Now choose an exponential Ansatz for the displacement and the velocity
+\begin{align}
+	\eta &= \hat{\eta} (y) e^{i(kx - \omega t)} \\
+	u &= \hat{u} (y) e^{i(kx - \omega t)}
+\end{align}
+Substituting this into the equations of motion and cancelling the exponential factors gives
+\begin{align*}
+    - i \omega \hat{\eta} + i k H \hat{u} = 0, \quad - i \omega \hat{u} = - i k g \hat{\eta}, \quad f \hat{u} = - g \frac{\partial \hat{\eta}}{\partial y}
+\end{align*}
+Isolating $\hat{u}$ in the first two equations gives the following dispersion relation:
+\begin{align}
+    \hat{u} = \frac{\omega}{k H} \hat{\eta} &= \frac{kg}{\omega} \hat{\eta} \notag \\
+    \implies \omega^2 &= k^2 g H
+\end{align}
+We see that the phase speed is:
+\begin{align}
+    c &= \frac{\omega}{k} = \sqrt{g H}
+\end{align}
+As an aside, this agrees with the result that one finds by using the shallow-water approximation for surface gravity waves that are not affected by the Coriolis force (eq. (8.49) in Kundu). So the phase speed of Kelvin waves is the same as that of surface gravity waves.
 
 
 \newpage
@@ -1162,7 +1237,7 @@ If a flow is irrotational, meaning the vorticity is zero, then the velocity fiel
 \begin{align}
 	\mathbf{u} = \nabla \Phi
 \end{align}
-In this case, Bernoulli's theorem (\ref{eq:bernoulli_equation}) can be used to arrive at the result
+In this case, Bernoulli's theorem (\ref{eq:bernoulli_theorem}) can be used to arrive at the result
 \begin{align}
 	\partial_t \Phi + \frac{|\mathbf{u}|^2}{2} + h + \phi = \text{const.}
 \end{align}
