@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.2.28)  2 APR 2026 17:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.2.28)  2 APR 2026 17:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1131,7 +1131,7 @@ Overfull \hbox (30.0pt too wide) in paragraph at lines 366--366
  []
 
 [10] [11]
-<img/N2_NS/Lecture1B_ShearStressSurfaceAB.png, id=511, 790.955pt x 786.94pt>
+<img/N2_NS/Lecture1B_ShearStressSurfaceAB.png, id=512, 790.955pt x 786.94pt>
 File: img/N2_NS/Lecture1B_ShearStressSurfaceAB.png Graphic file (type png)
 <use img/N2_NS/Lecture1B_ShearStressSurfaceAB.png>
 Package pdftex.def Info: img/N2_NS/Lecture1B_ShearStressSurfaceAB.png  used on 
@@ -1142,13 +1142,13 @@ input line 434.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [12] [13 <./img/N2_NS/Lecture1B_ShearStressSurfaceAB.png>] [14] [15]
-<img/N2_NS/3D_Spherical.png, id=567, 1284.8pt x 1114.1625pt>
+<img/N2_NS/3D_Spherical.png, id=568, 1284.8pt x 1114.1625pt>
 File: img/N2_NS/3D_Spherical.png Graphic file (type png)
 <use img/N2_NS/3D_Spherical.png>
 Package pdftex.def Info: img/N2_NS/3D_Spherical.png  used on input line 548.
 (pdftex.def)             Requested size: 271.7835pt x 235.6811pt.
  [16 <./img/N2_NS/3D_Spherical.png>] [17] [18]
-<img/boundary_cond/Lecture2A_InterfaceTwoMediaBoundaryConditions.png, id=598, 6
+<img/boundary_cond/Lecture2A_InterfaceTwoMediaBoundaryConditions.png, id=599, 6
 85.56125pt x 305.14pt>
 File: img/boundary_cond/Lecture2A_InterfaceTwoMediaBoundaryConditions.png Graph
 ic file (type png)
@@ -1162,7 +1162,7 @@ Overfull \hbox (0.61931pt too wide) in paragraph at lines 665--668
 lly mean-ing-ful. Re-call that na-ture tends to min-i-mize the Helmholtz
  []
 
-<img/boundary_cond/Lecture2A_CurvedSurfaceBC.png, id=615, 169.48274pt x 122.795
+<img/boundary_cond/Lecture2A_CurvedSurfaceBC.png, id=616, 169.48274pt x 122.795
 04pt>
 File: img/boundary_cond/Lecture2A_CurvedSurfaceBC.png Graphic file (type png)
 <use img/boundary_cond/Lecture2A_CurvedSurfaceBC.png>
@@ -1178,7 +1178,7 @@ onditions.png  used on input line 759.
 (pdftex.def)             Requested size: 271.7835pt x 120.97362pt.
  [22] [23]
 [24] [25] [26]
-<img/wave_intro/Lecture2B_PhaseandGroupPropagation.png, id=716, 726.46407pt x 3
+<img/wave_intro/Lecture2B_PhaseandGroupPropagation.png, id=717, 726.46407pt x 3
 26.72063pt>
 File: img/wave_intro/Lecture2B_PhaseandGroupPropagation.png Graphic file (type 
 png)
@@ -1187,7 +1187,7 @@ Package pdftex.def Info: img/wave_intro/Lecture2B_PhaseandGroupPropagation.png
  used on input line 919.
 (pdftex.def)             Requested size: 317.07614pt x 142.6059pt.
  [27 <./img/wave_intro/Lecture2B_PhaseandGroupPropagation.png>]
-<img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves.jpg, id=727, 264.13725pt
+<img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves.jpg, id=728, 264.13725pt
  x 143.26088pt>
 File: img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves.jpg Graphic file (t
 ype jpg)
@@ -1198,7 +1198,7 @@ jpg  used on input line 932.
 
 [28 <./img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves.jpg>] [29]
 [30] [31]
-<img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves2.jpg, id=783, 586.19pt x
+<img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves2.jpg, id=784, 586.19pt x
  331.2375pt>
 File: img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves2.jpg Graphic file (
 type jpg)
@@ -1208,7 +1208,7 @@ Package pdftex.def Info: img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves2
 (pdftex.def)             Requested size: 271.7835pt x 153.574pt.
  [32 <./img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves2.jpg>]
 [33] [34] [35] [36] [37] [38]
-<img/laminar_flow/Lecture6B_FlowBetweenParallelPlates.png, id=863, 373.89688pt 
+<img/laminar_flow/Lecture6B_FlowBetweenParallelPlates.png, id=864, 373.89688pt 
 x 174.15062pt>
 File: img/laminar_flow/Lecture6B_FlowBetweenParallelPlates.png Graphic file (ty
 pe png)
@@ -1217,7 +1217,7 @@ Package pdftex.def Info: img/laminar_flow/Lecture6B_FlowBetweenParallelPlates.p
 ng  used on input line 1327.
 (pdftex.def)             Requested size: 271.7835pt x 126.59477pt.
  [39]
-<img/laminar_flow/Lecture6B_ParallelFlowFilmThickness.png, id=874, 1333.98375pt
+<img/laminar_flow/Lecture6B_ParallelFlowFilmThickness.png, id=875, 1333.98375pt
  x 245.41687pt>
 File: img/laminar_flow/Lecture6B_ParallelFlowFilmThickness.png Graphic file (ty
 pe png)
@@ -1232,17 +1232,13 @@ hanics_notes.aux)
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `fluid_mechanics_notes.out' has not changed.
 (rerunfilecheck)             Checksum: 5361965F0A8D8ED1C4CC45A9D2265FDA;13532.
  ) 
 Here is how much of TeX's memory you used:
  32780 strings out of 467868
  695689 string characters out of 5423210
- 1066363 words of memory out of 5000000
+ 1066364 words of memory out of 5000000
  60812 multiletter control sequences out of 15000+600000
  644799 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1261,10 +1257,11 @@ cus/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/focus
 iktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/focus/.mi
 ktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb></home/focus/.mikt
 ex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home/focus/.miktex
-/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on fluid_mechanics_notes.pdf (44 pages, 1002845 bytes).
+/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb></home/focus/.miktex/
+texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on fluid_mechanics_notes.pdf (44 pages, 1006593 bytes).
 PDF statistics:
- 1066 PDF objects out of 1200 (max. 8388607)
+ 1071 PDF objects out of 1200 (max. 8388607)
  368 named destinations out of 1000 (max. 500000)
  548 words of extra memory for PDF output out of 10000 (max. 10000000)
 
