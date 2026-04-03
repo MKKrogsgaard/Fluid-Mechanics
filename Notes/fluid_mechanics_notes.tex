@@ -536,7 +536,7 @@ Substituting $\frac{D \mathbf{u}}{d t} = \mathbf{a}(t)$ into the Navier-Stokes e
 Note that the presence of a prime sign indicates whether the differentiation takes place with respect to the coordinates of $O'$ or $O$. The physical interpretation of the above equation is that the non-inertial frame corresponds to the addition of multiple new body force terms.
 
 \subsection{Navier-Stokes in (non-inertial) spherical coordinates}
-It is possible to express (\ref{eq:N2_NS_navier_stokes_incompressible_noninertial}) in spherical coordinates, which is occasionally useful, since the Earth is nearly spherical. The calculation involves a lot of simple but very tedious vector calculus, so I will just state the result here. To perform the calculation yourself, simply consider the spherical coordinate expressions for the gradient, Laplacian, cross product and so on, as well as the derivatives of the spherical coordinate unit vectors. Anyhow, in the spherical coordinates shown in fig. \ref{fig:N2_NS_spherical_coords}, the non-inertial Navier-Stokes equation becomes
+%It is possible to express (\ref{eq:N2_NS_navier_stokes_incompressible_noninertial}) in spherical coordinates, which is occasionally useful since the Earth is nearly spherical. The calculation involves a lot of simple but very tedious vector calculus, so I will just state the result here. To perform the calculation yourself, consider the spherical coordinate expressions for the gradient, Laplacian, cross product and so on, as well as the derivatives of the spherical coordinate unit vectors to expand the terms in (\ref{eq:N2_NS_navier_stokes_incompressible_noninertial}). Anyhow, in the spherical coordinates shown in fig. \ref{fig:N2_NS_spherical_coords}, the non-inertial Navier-Stokes equation becomes
 \begin{align}
 	\frac{D u}{D t} - \left(2 \Omega + \frac{u}{r \cos \phi} \right) \left(v \sin \phi - w \cos \phi \right) = -\frac{1}{\rho r \cos \theta} \partial_\phi p \notag \\
 	\frac{D v}{D t} + \frac{w v}{r} + \left( 2 \Omega + \frac{u}{r \cos \theta} \right) u \sin \theta = - \frac{1}{\rho r} \partial_\phi p \label{eq:N2_NS_navier_stokes_incompressible_noninertial_spherical} \\
@@ -549,6 +549,26 @@ It is possible to express (\ref{eq:N2_NS_navier_stokes_incompressible_noninertia
     \caption{An illustration of spherical coordinates.}
     \label{fig:N2_NS_spherical_coords}
 \end{figure}
+
+\subsection{Navier-Stokes in a dimensionless form}
+Start by introducing the following dimensionless variables
+\begin{align*}
+x_i^* = \frac{x_i}{L}, \quad t^* = \Omega t, \quad u_i^* = \frac{u_i}{U}, \quad p^* = \frac{p - p_\infty}{\rho U^2}, \quad g_i^* = \frac{g_i}{g}
+\end{align*}
+
+Where $L$ is the characteristic length scale of the flow, $\Omega$ is the characteristic oscillation frequency and $U$ is the free-stream velocity of the flow. Using these variables, it is possiblie to write down a dimensionless form of the Navier-Stokes equation
+\begin{align}
+    \text{St} \frac{\partial \mathbf{u}^*}{\partial t} + (\mathbf{u}^* \cdot \nabla^*)\mathbf{u}^* = - \nabla^* p^* + \frac{1}{\text{Fr}} \mathbf{g}^* + \frac{1}{\text{Re}} {\nabla^*}^2\mathbf{u}^* \label{eq:N2_NS_navier_stokes_dimensionless}
+\end{align}
+
+The four different dimensionless parameters involved in this equation are
+\begin{align*}
+    \text{St} = \text{Strouhal number} &= \frac{\text{Characteristic flow time}}{\text{period of the oscillation}} = \frac{\Omega l}{U} \\
+    \text{Re} = \text{Reynolds number} &= \frac{\text{Inertia force}}{\text{viscous force}} = \frac{\rho U l}{\mu} \\
+    \text{Fr} = \text{Froude number} &= \frac{\text{Inertia force}}{\text{gravity force}} = \frac{U}{\sqrt{gl}} \\
+    \text{Eu} = \text{Euler number} &= \frac{\text{Pressure difference}}{\text{Dynamic pressure}} = \frac{p - p_\infty}{\rho U^2}
+\end{align*}
+Note that the Euler number appears indirectly through the definition of $p^*$.
 
 \subsection{The Boussinesq approximation}
 At small velocities, the incompressible Navier-Stokes equation (\ref{eq:N2_NS_navier_stokes_incompressible}) becomes 
