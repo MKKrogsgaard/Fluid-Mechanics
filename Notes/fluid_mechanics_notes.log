@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.2.28)  3 APR 2026 15:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.2.28)  5 APR 2026 10:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1142,13 +1142,13 @@ input line 434.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [12] [13 <./img/N2_NS/Lecture1B_ShearStressSurfaceAB.png>] [14] [15]
-<img/N2_NS/3D_Spherical.png, id=575, 1284.8pt x 1114.1625pt>
+<img/N2_NS/3D_Spherical.png, id=572, 1284.8pt x 1114.1625pt>
 File: img/N2_NS/3D_Spherical.png Graphic file (type png)
 <use img/N2_NS/3D_Spherical.png>
 Package pdftex.def Info: img/N2_NS/3D_Spherical.png  used on input line 548.
 (pdftex.def)             Requested size: 271.7835pt x 235.6811pt.
  [16 <./img/N2_NS/3D_Spherical.png>] [17] [18] [19]
-<img/boundary_cond/Lecture2A_InterfaceTwoMediaBoundaryConditions.png, id=612, 6
+<img/boundary_cond/Lecture2A_InterfaceTwoMediaBoundaryConditions.png, id=609, 6
 85.56125pt x 305.14pt>
 File: img/boundary_cond/Lecture2A_InterfaceTwoMediaBoundaryConditions.png Graph
 ic file (type png)
@@ -1162,7 +1162,7 @@ Overfull \hbox (0.61931pt too wide) in paragraph at lines 685--688
 lly mean-ing-ful. Re-call that na-ture tends to min-i-mize the Helmholtz
  []
 
-<img/boundary_cond/Lecture2A_CurvedSurfaceBC.png, id=628, 169.48274pt x 122.795
+<img/boundary_cond/Lecture2A_CurvedSurfaceBC.png, id=625, 169.48274pt x 122.795
 04pt>
 File: img/boundary_cond/Lecture2A_CurvedSurfaceBC.png Graphic file (type png)
 <use img/boundary_cond/Lecture2A_CurvedSurfaceBC.png>
@@ -1178,7 +1178,7 @@ onditions.png  used on input line 779.
 (pdftex.def)             Requested size: 271.7835pt x 120.97362pt.
  [23] [24]
 [25] [26] [27]
-<img/wave_intro/Lecture2B_PhaseandGroupPropagation.png, id=729, 726.46407pt x 3
+<img/wave_intro/Lecture2B_PhaseandGroupPropagation.png, id=726, 726.46407pt x 3
 26.72063pt>
 File: img/wave_intro/Lecture2B_PhaseandGroupPropagation.png Graphic file (type 
 png)
@@ -1187,7 +1187,7 @@ Package pdftex.def Info: img/wave_intro/Lecture2B_PhaseandGroupPropagation.png
  used on input line 939.
 (pdftex.def)             Requested size: 317.07614pt x 142.6059pt.
  [28 <./img/wave_intro/Lecture2B_PhaseandGroupPropagation.png>]
-<img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves.jpg, id=740, 264.13725pt
+<img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves.jpg, id=737, 264.13725pt
  x 143.26088pt>
 File: img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves.jpg Graphic file (t
 ype jpg)
@@ -1198,7 +1198,7 @@ jpg  used on input line 952.
 
 [29 <./img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves.jpg>] [30]
 [31] [32]
-<img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves2.jpg, id=796, 586.19pt x
+<img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves2.jpg, id=793, 586.19pt x
  331.2375pt>
 File: img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves2.jpg Graphic file (
 type jpg)
@@ -1208,7 +1208,7 @@ Package pdftex.def Info: img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves2
 (pdftex.def)             Requested size: 271.7835pt x 153.574pt.
  [33 <./img/gravity_waves/Lecture2A_LinearSurfaceGravityWaves2.jpg>]
 [34] [35] [36] [37] [38] [39]
-<img/laminar_flow/Lecture6B_FlowBetweenParallelPlates.png, id=876, 373.89688pt 
+<img/laminar_flow/Lecture6B_FlowBetweenParallelPlates.png, id=873, 373.89688pt 
 x 174.15062pt>
 File: img/laminar_flow/Lecture6B_FlowBetweenParallelPlates.png Graphic file (ty
 pe png)
@@ -1217,7 +1217,7 @@ Package pdftex.def Info: img/laminar_flow/Lecture6B_FlowBetweenParallelPlates.p
 ng  used on input line 1347.
 (pdftex.def)             Requested size: 271.7835pt x 126.59477pt.
  [40]
-<img/laminar_flow/Lecture6B_ParallelFlowFilmThickness.png, id=887, 1333.98375pt
+<img/laminar_flow/Lecture6B_ParallelFlowFilmThickness.png, id=884, 1333.98375pt
  x 245.41687pt>
 File: img/laminar_flow/Lecture6B_ParallelFlowFilmThickness.png Graphic file (ty
 pe png)
@@ -1259,9 +1259,9 @@ ktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb></home/focus/.mikt
 ex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home/focus/.miktex
 /texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb></home/focus/.miktex/
 texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on fluid_mechanics_notes.pdf (45 pages, 1010430 bytes).
+Output written on fluid_mechanics_notes.pdf (45 pages, 1009352 bytes).
 PDF statistics:
- 1083 PDF objects out of 1200 (max. 8388607)
+ 1080 PDF objects out of 1200 (max. 8388607)
  371 named destinations out of 1000 (max. 500000)
  556 words of extra memory for PDF output out of 10000 (max. 10000000)
 
