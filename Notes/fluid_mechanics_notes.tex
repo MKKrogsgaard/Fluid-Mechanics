@@ -1122,11 +1122,11 @@ Now consider the continuity equation (\ref{eq:N2_NS_incompressible_continuity_eq
 \end{align}
 We can simplify this considerably using boundary conditions. For instance, the normal component of the fluid velocity must be zero at $z=0$ so $w(0) = 0$. And the fluid must move with the surface at $H + \eta$ which leads to
 \begin{align}
-	w(H + \eta) - \frac{D \eta}{D t} = \partial_t \eta + u \partial_x \eta + v \partial_y \eta
+	w(H + \eta) = \frac{D \eta}{D t} = \partial_t \eta + u \partial_x \eta + v \partial_y \eta
 \end{align}
 This allows us to write the continuity equation as
 \begin{align}
-	\partial_t + \partial_x \left[u (H + \eta) \right] + \partial_y \left[v (H + \eta) \right] = 0
+	\partial_t \eta + \partial_x \left[(H + \eta) u  \right] + \partial_y \left[(H + \eta) v \right] = 0
 \end{align}
 Dropping non-linear terms leads to the final form of the linearized shallow-water continuity equation
 \begin{align}
@@ -1138,7 +1138,7 @@ Deriving the linearized Navier-Stokes equation is a bit trickier, so we will be 
 \end{align*}
 For waves on length scales that do are small compared to the circumferance of the Earth, the Coriolis force acceleration can be considered constant. Thus we can write
 \begin{align*}
-	2 \Omega \times \mathbf{u} \approx (f v, f u - 2\Omega u \cos \theta)
+	2 \Omega \times \mathbf{u} \approx (-f v, f u, - 2\Omega u \cos \theta)
 \end{align*}
 Where $f$ is the local \textbf{Coriolis parameter} (also called the \textbf{Coriolis frequency}). Using this approximation and neglecting non-linear terms leads to
 \begin{align}
